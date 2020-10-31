@@ -36,8 +36,10 @@ merged_data <- unemployment_change %>%
   inner_join(mobility_avg, by = "county") %>%
   inner_join(socioeconomic, by = "county")
 
-merged_data %>%
-  
+set.seed(0)
+sample_data <- sample_n(merged_data, 500)
+
+sample_data
 ```
 
 
