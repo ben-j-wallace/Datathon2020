@@ -21,13 +21,16 @@ library(knitr)
 unemployment_change <- read_csv(here("data", "unemployment-change.csv"))
 mobility_avg <- read_csv(here("data", "mobility-avg.csv")) %>% 
   mutate(county = sub_region_2)
+big <- read_csv(here("data","combined_big.csv"))
 ```
 
 ## Merge data
 
+
 ```{r}
-merged_data <- inner_join(unemployment_change, mobility_avg, 
-                           by = "county")
+merged_data <- unemployment_change %>%
+  inner_join(mobility_avg, by = "county") %>%
+  inner_join(big, by = c("county" = "Area_name"))
 
 merged_data
 ```
