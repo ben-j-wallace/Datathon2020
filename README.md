@@ -1,16 +1,21 @@
-# Datathon 2020
+# Datathon2020
 
-Team Members:
+### Team bAESIAN statistics: Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu 
 
-+ Lily Zhu
+## Background
 
-+ Larry Zheng
+## Proposition
 
-+ Ben Wallace
+## Solution
 
-+ Albert Sun
-
-Topic: 
-
-Research Question: 
-
+## Components
+### `data` **folder**
+  - Description: includes .csv and other data files used in data analysis
+  - Files:
+### `r` **folder**
+  - Description: includes .rmd and other .r files
+  - Files
+### `output` **folder**
+  - Description: includes .pdf knitting and other visualizations
+  - Files:
+  
