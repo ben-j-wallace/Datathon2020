@@ -36,11 +36,3 @@ merged_data <- inner_join(unemployment_change, mobility, by = "county") %>%
 ggplot(data = merged_data, mapping = aes(x = unemployment_change)) +
   geom_histogram()
 ```
-
-```{r}
-merged_data %>% 
-  group_by(sub_region_1) %>% 
-  ggplot(mapping = aes(x = unemployment_change)) +
-  geom_histogram()
-```
-

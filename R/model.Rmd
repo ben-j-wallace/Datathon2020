@@ -34,7 +34,11 @@ unemployment_change
 ```{r}
 merged_data <- unemployment_change %>%
   inner_join(mobility_avg, by = "county") %>%
-  inner_join(socioeconomic, by = "county")
+```
+
+
+```{r}
+#inner_join(socioeconomic, by = "county")
 
 set.seed(0)
 sample_data <- sample_n(merged_data, 500)
@@ -42,6 +46,10 @@ sample_data <- sample_n(merged_data, 500)
 sample_data
 ```
 
+```{r}
+ggplot(data = sample_data, mapping = aes(x = unemployment_change)) +
+  geom_bar()
+```
 
 ## EDA
 
@@ -58,7 +66,7 @@ model <- lm(unemployment_change ~ retail_avg +
               transit_avg + 
               workplaces_avg + 
               residential_avg, 
-            data = merged_data_2)
+            data = merged_data)
 
 model %>%
   tidy(conf.int = TRUE) %>%
