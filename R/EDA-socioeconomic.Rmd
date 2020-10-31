@@ -1,0 +1,44 @@
+---
+title: "EDA-socioeconomic"
+author: "Larry Zheng"
+output: 
+    pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE)
+```
+
+```{r load packages}
+library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(here)
+```
+
+```{r}
+education <- read.csv(here("data", "Education.csv")) %>%
+  filter(State == "NC") %>%
+  rename(Area_name = Area.name)
+
+pop_estimates <- read.csv(here("data", "PopulationEstimates.csv")) %>%
+  filter(State == "NC") %>%
+  rename(Area_name = Area_Name)
+
+poverty_estimates <- read.csv(here("data", "PovertyEstimates.csv")) %>%
+  rename(State = Stabr) %>%
+  filter(State == "NC")
+
+unemployment <- read.csv(here("data", "Unemployment.csv")) %>%
+  rename(State = Stabr, Area_name = area_name) %>%
+  filter(State == "NC")
+```
+
+```{r}
+combined <- merge(education,pop_estimates,by="Area_name")
+combined <- merge(combined,poverty_estimates,by="Area_name")
+combined <- merge(combined,unemployment,by="Area_name")
+```
+
