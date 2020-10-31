@@ -74,15 +74,6 @@ model %>%
 
 
 
-```{r}
-augment(model) %>%
-  ggplot(aes(x = .fitted, y = .resid)) +
-  geom_point() +
-  theme_grey(base_size = 14) +
-  labs(x = "Fitted", y = "Residual", title = "Residuals Show No Pattern")
-```
-
-
 ## Questions
 - What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
 - Given the relationship between these variables, what is the expected unemployment rate of North Carolina counties?
@@ -126,4 +117,10 @@ aic_model %>%
 # model_aic <- step(full_model, direction = "backward")
 ```
 
-
+```{r}
+augment(aic_model) %>%
+  ggplot(aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  theme_grey(base_size = 14) +
+  labs(x = "Fitted", y = "Residual", title = "Residuals Show No Pattern")
+```
