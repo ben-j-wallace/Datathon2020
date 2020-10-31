@@ -14,44 +14,37 @@ library(tidyverse)
 library(here)
 library(broom)
 library(knitr)
+library(data.table)
 ```
 
 
 ```{r read data}
-unemployment <- read_csv("../data/Unemployment.csv")
-unemployment_change <- read_csv(here("data", "unemployment-change.csv"))
-mobility <- read_csv("../data/US-Mobility-Report.csv")
-mobility_avg <- read_csv("../data/mobility-avg.csv")
-
-mobility <- mobility %>% 
-  mutate(county = sub_region_2)
-big <- read_csv(here("data","combined_big.csv"))
+unemployment_change <- fread(here("data", "unemployment-change.csv"))
+mobility_avg <- fread(here("data", "mobility-avg.csv")) %>%
+  mutate(county = sub_region_2) %>%
+  select(-sub_region_2)
+socioeconomic <- fread(here("data", "socioeconomic.csv")) %>%
+  mutate(county = area_name) %>%
+  select(-area_name)
+unemployment_change
 ```
 
 ## Merge data
 
-
+```{r}
 merged_data <- unemployment_change %>%
   inner_join(mobility_avg, by = "county") %>%
-  inner_join(big, by = c("county" = "Area_name"))
+  inner_join(socioeconomic, by = "county")
 
-```{r}
-unemployment <- unemployment %>% 
-  mutate(county = sapply(strsplit(area_name, ","), "[", 1))
-
-merged_data <- inner_join(unemployment, mobility, by = "county")
+merged_data %>%
+  
 ```
 
-
-```{r}
-merged_data_2 <- inner_join(unemployment_change, mobility_avg, 
-                           by = "county")
-```
 
 ## EDA
 
 ```{r}
-merged_data_2 %>%
+merged_data %>%
   ggplot(aes(y = unemployment_change, x = retail_avg)) +
   geom_point()
 ```
@@ -68,16 +61,6 @@ model <- lm(unemployment_change ~ retail_avg +
 model %>%
   tidy(conf.int = TRUE) %>%
   kable(digits = 3)
-```
-
-
-
-## Old Merge Data
-
-
-```{r}
-#unemployment <- unemployment %>% 
-#  mutate(county = sapply(strsplit("Autauga County, AL", ","), "[", 1))
 ```
 
 

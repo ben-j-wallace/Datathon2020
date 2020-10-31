@@ -1,101 +1,1955 @@
-county,unemployment_change
-Alamance County,2.9999999999999996
-Alexander County,3.3
-Alleghany County,0.7999999999999998
-Anson County,3.5999999999999996
-Ashe County,1.1
-Avery County,1.1
-Beaufort County,1.5
-Bertie County,0.6000000000000005
-Bladen County,1.7000000000000002
-Brunswick County,2.3
-Buncombe County,4.6
-Burke County,2.8
-Cabarrus County,3.1999999999999997
-Caldwell County,3.6
-Camden County,0.9999999999999996
-Carteret County,0.7000000000000002
-Caswell County,2.5
-Catawba County,3.5000000000000004
-Chatham County,1.7999999999999998
-Cherokee County,2.0999999999999996
-Chowan County,1.4000000000000004
-Clay County,2.2
-Cleveland County,3.1
-Columbus County,2.5
-Craven County,2.2
-Cumberland County,4.299999999999999
-Currituck County,0.8999999999999999
-Dare County,-1.5999999999999996
-Davidson County,2.6999999999999997
-Davie County,2.8
-Duplin County,1.1000000000000005
-Durham County,3.4
-Edgecombe County,5.3999999999999995
-Forsyth County,3.5
-Franklin County,2.7
-Gaston County,3.7
-Gates County,1.1999999999999997
-Graham County,0.7999999999999998
-Granville County,2.2
-Greene County,1.7999999999999998
-Guilford County,4.299999999999999
-Halifax County,2.9000000000000004
-Harnett County,2.5999999999999996
-Haywood County,3.2
-Henderson County,2.9
-Hertford County,1.3000000000000007
-Hoke County,3.500000000000001
-Hyde County,-6.000000000000001
-Iredell County,3
-Jackson County,1.8999999999999995
-Johnston County,2.6
-Jones County,1.6999999999999997
-Lee County,3
-Lenoir County,2.3000000000000003
-Lincoln County,2.4
-McDowell County,2
-Macon County,1.5999999999999996
-Madison County,2.4999999999999996
-Martin County,2
-Mecklenburg County,4.199999999999999
-Mitchell County,1.4000000000000004
-Montgomery County,2.4000000000000004
-Moore County,2.4
-Nash County,3.6999999999999993
-New Hanover County,3.0000000000000004
-Northampton County,1.0999999999999996
-Onslow County,2.0999999999999996
-Orange County,2.0000000000000004
-Pamlico County,1.7000000000000002
-Pasquotank County,1.9000000000000004
-Pender County,2.0999999999999996
-Perquimans County,1
-Person County,2.6999999999999997
-Pitt County,2.6999999999999997
-Polk County,1.7000000000000002
-Randolph County,2.8000000000000003
-Richmond County,3.500000000000001
-Robeson County,3.8000000000000007
-Rockingham County,3.3
-Rowan County,3
-Rutherford County,3.0999999999999996
-Sampson County,1.5999999999999996
-Scotland County,4.9
-Stanly County,1.7000000000000002
-Stokes County,2.0999999999999996
-Surry County,2.1
-Swain County,0.9000000000000004
-Transylvania County,1.5
-Tyrrell County,-0.7999999999999998
-Union County,2.2
-Vance County,4
-Wake County,2.9
-Warren County,3.5999999999999996
-Washington County,1.1000000000000005
-Watauga County,1.4999999999999996
-Wayne County,2.3000000000000003
-Wilkes County,1.5999999999999996
-Wilson County,3.000000000000001
-Yadkin County,2.4
-Yancey County,1.5999999999999996
+county,state.x,unemployment_change
+Autauga County,AL,1.8999999999999995
+Baldwin County,AL,2.4999999999999996
+Barbour County,AL,3.5999999999999996
+Bibb County,AL,3.3000000000000003
+Blount County,AL,1.1
+Bullock County,AL,2.5
+Butler County,AL,3.9000000000000004
+Calhoun County,AL,3.4
+Chambers County,AL,3.1000000000000005
+Cherokee County,AL,0.7000000000000002
+Chilton County,AL,2.1999999999999997
+Choctaw County,AL,1.1999999999999993
+Clarke County,AL,3.8000000000000007
+Clay County,AL,0.5999999999999996
+Cleburne County,AL,0.7000000000000002
+Coffee County,AL,1.2999999999999998
+Colbert County,AL,2.3
+Conecuh County,AL,3.2
+Coosa County,AL,1.6999999999999997
+Covington County,AL,0.8999999999999995
+Crenshaw County,AL,1.8000000000000003
+Cullman County,AL,1
+Dale County,AL,2
+Dallas County,AL,5.4
+DeKalb County,AL,1
+Elmore County,AL,1.9999999999999996
+Escambia County,AL,2.5000000000000004
+Etowah County,AL,3.1
+Fayette County,AL,1.3000000000000003
+Franklin County,AL,0.10000000000000009
+Geneva County,AL,1.0999999999999996
+Greene County,AL,5.199999999999999
+Hale County,AL,5
+Henry County,AL,1.2999999999999998
+Houston County,AL,2.7
+Jackson County,AL,1
+Jefferson County,AL,3.8
+Lamar County,AL,0.9999999999999996
+Lauderdale County,AL,1.9000000000000004
+Lawrence County,AL,1.8000000000000003
+Lee County,AL,2.5000000000000004
+Limestone County,AL,1.4
+Lowndes County,AL,8.6
+Macon County,AL,5.699999999999999
+Madison County,AL,2.3
+Marengo County,AL,2.4
+Marion County,AL,0.09999999999999964
+Marshall County,AL,1.1
+Mobile County,AL,4.500000000000001
+Monroe County,AL,2.5
+Montgomery County,AL,5.4
+Morgan County,AL,2.0000000000000004
+Perry County,AL,5.8
+Pickens County,AL,2.7
+Pike County,AL,1.9
+Randolph County,AL,0.8000000000000003
+Russell County,AL,2.0999999999999996
+St. Clair County,AL,2
+Shelby County,AL,1.7000000000000002
+Sumter County,AL,2.4000000000000004
+Talladega County,AL,2.7
+Tallapoosa County,AL,3.2
+Tuscaloosa County,AL,3.8000000000000003
+Walker County,AL,2.1000000000000005
+Washington County,AL,3.499999999999999
+Wilcox County,AL,6
+Winston County,AL,0.8999999999999995
+Aleutians East Borough,AK,-0.30000000000000004
+Aleutians West Census Area,AK,0.20000000000000018
+Anchorage Borough/municipality,AK,2
+Bethel Census Area,AK,-2.6999999999999993
+Bristol Bay Borough,AK,-11.4
+Denali Borough,AK,-12.2
+Dillingham Census Area,AK,-1.5
+Fairbanks North Star Borough,AK,0
+Haines Borough,AK,-6.4
+Hoonah-Angoon Census Area,AK,-8.599999999999998
+Juneau Borough/city,AK,1.7000000000000002
+Kenai Peninsula Borough,AK,-0.5
+Ketchikan Gateway Borough,AK,0.1999999999999993
+Kodiak Island Borough,AK,0.09999999999999964
+Kusilvak Census Area,AK,-5.5
+Lake and Peninsula Borough,AK,-5.6000000000000005
+Matanuska-Susitna Borough,AK,0
+Nome Census Area,AK,-1.700000000000001
+North Slope Borough,AK,0.20000000000000018
+Northwest Arctic Borough,AK,-3.3999999999999986
+Petersburg Borough,AK,-4.3999999999999995
+Prince of Wales-Hyder Census Area,AK,-2.3
+Sitka Borough/city,AK,0.40000000000000036
+Skagway Municipality,AK,-9
+Southeast Fairbanks Census Area,AK,-4.3
+Valdez-Cordova Census Area,AK,-6.5
+Wrangell Borough/city,AK,-1.5
+Yakutat Borough/city,AK,-6.1000000000000005
+Yukon-Koyukuk Census Area,AK,-5.1
+Apache County,AZ,0.10000000000000142
+Cochise County,AZ,-0.10000000000000053
+Coconino County,AZ,2.1000000000000005
+Gila County,AZ,0.5
+Graham County,AZ,0.5
+Greenlee County,AZ,0.8999999999999995
+La Paz County,AZ,0.20000000000000018
+Maricopa County,AZ,2.1000000000000005
+Mohave County,AZ,1.9000000000000004
+Navajo County,AZ,0.40000000000000036
+Pima County,AZ,1.7000000000000002
+Pinal County,AZ,1.2000000000000002
+Santa Cruz County,AZ,3.2
+Yavapai County,AZ,1.2000000000000002
+Yuma County,AZ,4.399999999999999
+Arkansas County,AR,1.5
+Ashley County,AR,3.5999999999999996
+Baxter County,AR,2.3
+Benton County,AR,2.8
+Boone County,AR,2.1999999999999997
+Bradley County,AR,1.9000000000000004
+Carroll County,AR,2.5999999999999996
+Chicot County,AR,3.6000000000000014
+Clark County,AR,2.8999999999999995
+Cleveland County,AR,2.4000000000000004
+Columbia County,AR,3.499999999999999
+Conway County,AR,1.7999999999999998
+Craighead County,AR,3.7
+Crawford County,AR,2.5999999999999996
+Crittenden County,AR,6.6
+Cross County,AR,2.5
+Desha County,AR,3.999999999999999
+Drew County,AR,1.7000000000000002
+Faulkner County,AR,2.8000000000000003
+Fulton County,AR,1
+Garland County,AR,6.1
+Grant County,AR,2.1999999999999997
+Hempstead County,AR,1.7000000000000002
+Hot Spring County,AR,3.4000000000000004
+Howard County,AR,2.3
+Independence County,AR,1.7999999999999998
+Izard County,AR,2.3999999999999995
+Johnson County,AR,2.5
+Lafayette County,AR,3.999999999999999
+Lincoln County,AR,1.7999999999999998
+Little River County,AR,2.3000000000000007
+Logan County,AR,2.8
+Lonoke County,AR,3.0999999999999996
+Miller County,AR,3.3
+Mississippi County,AR,4.800000000000001
+Nevada County,AR,3.0999999999999996
+Newton County,AR,0.6000000000000005
+Ouachita County,AR,1.2000000000000002
+Phillips County,AR,3.3999999999999995
+Poinsett County,AR,2.3000000000000007
+Polk County,AR,1.7999999999999998
+Pope County,AR,2.0999999999999996
+Prairie County,AR,1.5999999999999996
+Pulaski County,AR,6.3
+St. Francis County,AR,3.9000000000000004
+Saline County,AR,3.1
+Scott County,AR,1.2999999999999998
+Searcy County,AR,0.9000000000000004
+Sebastian County,AR,3.2
+Sevier County,AR,1.2999999999999998
+Sharp County,AR,1.7999999999999998
+Stone County,AR,1.8999999999999995
+Union County,AR,4
+Van Buren County,AR,1.9000000000000004
+White County,AR,1.7999999999999998
+Woodruff County,AR,1.5
+Yell County,AR,1.5
+Alameda County,CA,6.5
+Alpine County,CA,5.4
+Amador County,CA,4.5
+Butte County,CA,3.1999999999999993
+Calaveras County,CA,3
+Colusa County,CA,-9.4
+Contra Costa County,CA,6.300000000000001
+Del Norte County,CA,2.8
+El Dorado County,CA,3.8999999999999995
+Fresno County,CA,1.8000000000000007
+Glenn County,CA,0.6000000000000005
+Humboldt County,CA,4.299999999999999
+Imperial County,CA,5
+Inyo County,CA,3.3000000000000003
+Kern County,CA,3.3000000000000007
+Kings County,CA,0.29999999999999893
+Lake County,CA,2.7
+Lassen County,CA,0.6000000000000005
+Los Angeles County,CA,12.200000000000001
+Madera County,CA,1.5
+Marin County,CA,4.5
+Mariposa County,CA,2.000000000000001
+Mendocino County,CA,3.8
+Merced County,CA,0.29999999999999893
+Modoc County,CA,-3.500000000000001
+Mono County,CA,7.500000000000001
+Monterey County,CA,-1.0999999999999996
+Napa County,CA,4.8
+Orange County,CA,6.7
+Placer County,CA,4.2
+Plumas County,CA,-3.2
+Riverside County,CA,6.6
+Sacramento County,CA,6.2
+San Benito County,CA,2.6000000000000005
+San Bernardino County,CA,6.500000000000001
+San Diego County,CA,6.3
+San Francisco County/city,CA,6.2
+San Joaquin County,CA,4.800000000000001
+San Luis Obispo County,CA,4.6
+San Mateo County,CA,5.1
+Santa Barbara County,CA,3
+Santa Clara County,CA,4.6
+Shasta County,CA,2.5
+Sierra County,CA,0.39999999999999947
+Siskiyou County,CA,0.1999999999999993
+Solano County,CA,5.9
+Sonoma County,CA,4.7
+Stanislaus County,CA,3.700000000000001
+Sutter County,CA,1.1999999999999993
+Tehama County,CA,2.2
+Trinity County,CA,-0.7999999999999998
+Tulare County,CA,0.8000000000000007
+Tuolumne County,CA,4.800000000000001
+Ventura County,CA,4.999999999999999
+Yolo County,CA,2.4000000000000004
+Yuba County,CA,3.4000000000000004
+Adams County,CO,4.3
+Alamosa County,CO,1.3999999999999995
+Arapahoe County,CO,4.7
+Archuleta County,CO,2.8
+Baca County,CO,-0.40000000000000013
+Bent County,CO,1.2000000000000002
+Boulder County,CO,3.4
+Broomfield County/city,CO,3.3000000000000003
+Chaffee County,CO,2.5999999999999996
+Cheyenne County,CO,0.7999999999999998
+Clear Creek County,CO,5
+Conejos County,CO,-0.09999999999999964
+Costilla County,CO,3.3999999999999995
+Crowley County,CO,-0.1999999999999993
+Custer County,CO,0.7999999999999998
+Delta County,CO,1.5999999999999996
+Denver County/city,CO,5.1000000000000005
+Dolores County,CO,1.9999999999999996
+Douglas County,CO,2.6999999999999997
+Eagle County,CO,5.6
+Elbert County,CO,1.5
+El Paso County,CO,2.8000000000000003
+Fremont County,CO,1.6000000000000005
+Garfield County,CO,2.5
+Gilpin County,CO,8.5
+Grand County,CO,4.3999999999999995
+Gunnison County,CO,2.5999999999999996
+Hinsdale County,CO,-0.5
+Huerfano County,CO,1.5999999999999996
+Kiowa County,CO,0.6000000000000001
+Kit Carson County,CO,0.5
+La Plata County,CO,2.4
+Larimer County,CO,2.9999999999999996
+Las Animas County,CO,2.8
+Mesa County,CO,2.1000000000000005
+Mineral County,CO,2.3
+Moffat County,CO,1
+Montezuma County,CO,0.20000000000000018
+Montrose County,CO,1.9
+Otero County,CO,1
+Ouray County,CO,2.4999999999999996
+Park County,CO,2.3000000000000003
+Pitkin County,CO,5.4
+Prowers County,CO,1.4
+Pueblo County,CO,3
+Rio Blanco County,CO,1.0999999999999996
+Rio Grande County,CO,1.5
+Routt County,CO,4.5
+Saguache County,CO,2.5999999999999996
+San Juan County,CO,1.4
+San Miguel County,CO,6.6000000000000005
+Sedgwick County,CO,1
+Summit County,CO,7.6
+Teller County,CO,2.8000000000000003
+Weld County,CO,3.6999999999999997
+Fairfield County,CT,3.9000000000000004
+Hartford County,CT,4.1
+Litchfield County,CT,2.2
+Middlesex County,CT,2.5000000000000004
+New Haven County,CT,3.9000000000000004
+New London County,CT,5.1
+Tolland County,CT,2.1999999999999997
+Windham County,CT,2.7
+Kent County,DE,5.4
+New Castle County,DE,5.7
+Sussex County,DE,3
+District of Colu,ia,3.6000000000000005
+Alachua County,FL,2.0999999999999996
+Baker County,FL,1.3000000000000003
+Bay County,FL,1.7000000000000002
+Bradford County,FL,2
+Brevard County,FL,2.9
+Broward County,FL,6.299999999999999
+Charlotte County,FL,3
+Citrus County,FL,2.4000000000000004
+Collier County,FL,4
+DeSoto County,FL,0.9000000000000004
+Dixie County,FL,0.9000000000000004
+Duval County,FL,3.1999999999999997
+Flagler County,FL,2.9
+Gadsden County,FL,2.6999999999999997
+Gilchrist County,FL,1
+Glades County,FL,1.3000000000000003
+Gulf County,FL,1.5
+Hamilton County,FL,2.8999999999999995
+Hardee County,FL,1.5999999999999996
+Hendry County,FL,3.8
+Hernando County,FL,3.2
+Highlands County,FL,2.3
+Hillsborough County,FL,4
+Holmes County,FL,1
+Indian River County,FL,3.1999999999999997
+Leon County,FL,2.7
+Levy County,FL,1.5
+Liberty County,FL,0.7999999999999998
+Manatee County,FL,3.0999999999999996
+Martin County,FL,2.3
+Miami-Dade County,FL,6.5
+Nassau County,FL,2
+Okaloosa County,FL,1.7000000000000002
+Okeechobee County,FL,2.0000000000000004
+Osceola County,FL,11.700000000000001
+Palm Beach County,FL,4.800000000000001
+Pasco County,FL,3.1999999999999997
+Pinellas County,FL,3.6
+Putnam County,FL,2.9000000000000004
+St. Johns County,FL,2.0999999999999996
+St. Lucie County,FL,3.5999999999999996
+Santa Rosa County,FL,1.6000000000000005
+Sarasota County,FL,3.0999999999999996
+Seminole County,FL,4.2
+Suwannee County,FL,1.6
+Taylor County,FL,2.8
+Volusia County,FL,3.5000000000000004
+Wakulla County,FL,1.2999999999999998
+Walton County,FL,1.7999999999999998
+Appling County,GA,0.2999999999999998
+Atkinson County,GA,0.10000000000000009
+Bacon County,GA,0.2999999999999998
+Banks County,GA,0.5
+Barrow County,GA,1.4
+Bartow County,GA,1.8000000000000003
+Ben Hill County,GA,0.6000000000000005
+Berrien County,GA,-0.09999999999999964
+Bleckley County,GA,0.6999999999999993
+Brantley County,GA,0.8000000000000003
+Brooks County,GA,1
+Bryan County,GA,1.6
+Bulloch County,GA,1.7999999999999998
+Burke County,GA,1.5
+Butts County,GA,2.0999999999999996
+Camden County,GA,0.5
+Candler County,GA,1.5
+Catoosa County,GA,0.5
+Charlton County,GA,-0.5
+Chatham County,GA,3.8000000000000003
+Chattahoochee County,GA,1.2999999999999998
+Chattooga County,GA,1.5
+Clayton County,GA,6.2
+Clinch County,GA,0
+Cobb County,GA,2.3000000000000003
+Colquitt County,GA,0.8999999999999999
+Cook County,GA,0.7999999999999998
+Coweta County,GA,2.4000000000000004
+Crisp County,GA,3.2
+Dade County,GA,-0.19999999999999973
+Dawson County,GA,1
+Decatur County,GA,0.7000000000000002
+Dodge County,GA,-0.3000000000000007
+Dooly County,GA,2.5
+Dougherty County,GA,3.7
+Early County,GA,1.8999999999999995
+Echols County,GA,0.5
+Effingham County,GA,1.5
+Emanuel County,GA,2.5
+Evans County,GA,1.4
+Fannin County,GA,-0.40000000000000036
+Floyd County,GA,1.2000000000000002
+Forsyth County,GA,1
+Gilmer County,GA,-0.09999999999999964
+Glascock County,GA,-0.7999999999999998
+Glynn County,GA,2.8000000000000003
+Gordon County,GA,0.6999999999999997
+Grady County,GA,0.30000000000000027
+Gwinnett County,GA,2.8000000000000003
+Habersham County,GA,1
+Hall County,GA,1.1
+Hancock County,GA,2.8000000000000007
+Haralson County,GA,1.4
+Harris County,GA,0.6999999999999997
+Hart County,GA,0.2999999999999998
+Heard County,GA,1.2000000000000002
+Irwin County,GA,0.20000000000000018
+Jasper County,GA,1.5000000000000004
+Jeff Davis County,GA,-0.2999999999999998
+Jenkins County,GA,1.3000000000000007
+Jones County,GA,0.5
+Lanier County,GA,0.40000000000000036
+Laurens County,GA,0.7000000000000002
+Long County,GA,0.20000000000000018
+Lumpkin County,GA,0.7999999999999998
+McDuffie County,GA,1.8999999999999995
+McIntosh County,GA,1.9
+Meriwether County,GA,3.5
+Mitchell County,GA,1.3999999999999995
+Murray County,GA,0.20000000000000018
+Muscogee County,GA,3.0999999999999996
+Oconee County,GA,0.2999999999999998
+Oglethorpe County,GA,0.9000000000000004
+Paulding County,GA,1.6999999999999997
+Peach County,GA,1.8000000000000003
+Pierce County,GA,0.5999999999999996
+Quitman County,GA,2.7
+Rabun County,GA,0.5
+Richmond County,GA,3
+Rockdale County,GA,3.1999999999999997
+Schley County,GA,-0.40000000000000036
+Screven County,GA,2.8999999999999995
+Spalding County,GA,2.8999999999999995
+Stephens County,GA,1.5000000000000004
+Stewart County,GA,1.5
+Talbot County,GA,1.7000000000000002
+Taliaferro County,GA,-2.1000000000000005
+Tattnall County,GA,-0.2999999999999998
+Telfair County,GA,-0.6999999999999993
+Terrell County,GA,3.3
+Thomas County,GA,1.9000000000000004
+Tift County,GA,1.1
+Toombs County,GA,1
+Towns County,GA,0
+Treutlen County,GA,-0.2999999999999998
+Troup County,GA,2.8
+Turner County,GA,2
+Twiggs County,GA,0.9000000000000004
+Upson County,GA,1.7000000000000002
+Ware County,GA,1.1000000000000005
+Warren County,GA,1.3999999999999995
+Wayne County,GA,1.0000000000000004
+Webster County,GA,0.5999999999999996
+Wheeler County,GA,-1.5
+Whitfield County,GA,1.4000000000000004
+Wilkes County,GA,0.20000000000000018
+Wilkinson County,GA,0.7000000000000002
+Worth County,GA,0.9000000000000004
+Hawaii County,HI,9
+Honolulu County/city,HI,8.5
+Kauai County,HI,15.5
+Maui County,HI,18.400000000000002
+Ada County,ID,1.6
+Bannock County,ID,0.6000000000000001
+Bear Lake County,ID,-0.5
+Benewah County,ID,-2.0999999999999996
+Bingham County,ID,-0.3999999999999999
+Blaine County,ID,1.4999999999999996
+Boise County,ID,0.6000000000000005
+Bonner County,ID,-0.10000000000000053
+Bonneville County,ID,0.19999999999999973
+Boundary County,ID,-1.5999999999999996
+Camas County,ID,-0.10000000000000009
+Canyon County,ID,1
+Caribou County,ID,-1.2999999999999998
+Cassia County,ID,0.20000000000000018
+Clearwater County,ID,-1.7999999999999998
+Gem County,ID,0.7999999999999998
+Gooding County,ID,-0.3999999999999999
+Idaho County,ID,-0.5
+Jerome County,ID,-0.3999999999999999
+Kootenai County,ID,0.7000000000000002
+Latah County,ID,0.8999999999999999
+Lemhi County,ID,-2.3000000000000003
+Lewis County,ID,-1.1000000000000005
+Minidoka County,ID,-0.10000000000000009
+Nez Perce County,ID,0.3999999999999999
+Oneida County,ID,0.3999999999999999
+Owyhee County,ID,0.20000000000000018
+Payette County,ID,-0.10000000000000009
+Power County,ID,-1
+Shoshone County,ID,-0.5999999999999996
+Teton County,ID,0.8999999999999999
+Twin Falls County,ID,0.6000000000000001
+Valley County,ID,-0.10000000000000053
+Alexander County,IL,5.800000000000001
+Bond County,IL,4.2
+Brown County,IL,2.1999999999999997
+Bureau County,IL,2.8999999999999995
+Cass County,IL,3.3
+Champaign County,IL,5.1
+Christian County,IL,4.3999999999999995
+Clinton County,IL,2.9000000000000004
+Coles County,IL,6.000000000000001
+Cumberland County,IL,2.9000000000000004
+De Witt County,IL,3.9
+DuPage County,IL,6.800000000000001
+Edgar County,IL,3.4000000000000004
+Edwards County,IL,2.4000000000000004
+Ford County,IL,3.2
+Gallatin County,IL,4.5
+Grundy County,IL,4.7
+Hardin County,IL,4.4
+Henderson County,IL,1.2999999999999998
+Iroquois County,IL,1.7999999999999998
+Jersey County,IL,3.7
+Jo Daviess County,IL,3.3
+Kane County,IL,5.800000000000001
+Kankakee County,IL,4.6
+Kendall County,IL,6.3999999999999995
+Knox County,IL,5.1000000000000005
+LaSalle County,IL,4.7
+Livingston County,IL,3.3000000000000003
+McDonough County,IL,4.999999999999999
+McHenry County,IL,6
+McLean County,IL,4.6000000000000005
+Macoupin County,IL,3.5
+Mason County,IL,3.7
+Massac County,IL,5.199999999999999
+Menard County,IL,2.6
+Mercer County,IL,1.7999999999999998
+Moultrie County,IL,3
+Ogle County,IL,3.799999999999999
+Peoria County,IL,7.199999999999999
+Piatt County,IL,3.2
+Richland County,IL,3.8
+Rock Island County,IL,5.1000000000000005
+Sangamon County,IL,5.6000000000000005
+Schuyler County,IL,2.1000000000000005
+Stark County,IL,1.9000000000000004
+Stephenson County,IL,3.7
+Tazewell County,IL,4.5
+Vermilion County,IL,5.4
+Wabash County,IL,3.6
+Whiteside County,IL,4.6000000000000005
+Will County,IL,7.1000000000000005
+Williamson County,IL,5.199999999999999
+Winnebago County,IL,7.1000000000000005
+Woodford County,IL,3.4
+Allen County,IN,3.4
+Bartholomew County,IN,2.9000000000000004
+Blackford County,IN,2.1000000000000005
+Daviess County,IN,0.7000000000000002
+Dearborn County,IN,2.0000000000000004
+Delaware County,IN,3.2
+Dubois County,IN,2.1
+Elkhart County,IN,3.3999999999999995
+Fountain County,IN,1.2999999999999998
+Gibson County,IN,2.1
+Harrison County,IN,2.1
+Hendricks County,IN,2.3000000000000003
+Huntington County,IN,1.7000000000000002
+Jay County,IN,1.5999999999999996
+Jennings County,IN,2.0999999999999996
+Kosciusko County,IN,2.6000000000000005
+LaGrange County,IN,1.4
+LaPorte County,IN,3.8
+Miami County,IN,2.5999999999999996
+Noble County,IN,2.7
+Ohio County,IN,3.1
+Owen County,IN,2
+Parke County,IN,1.1000000000000005
+Porter County,IN,3.1000000000000005
+Posey County,IN,1.2999999999999998
+Ripley County,IN,1.2999999999999998
+Rush County,IN,2
+St. Joseph County,IN,4.700000000000001
+Spencer County,IN,0.5
+Starke County,IN,1.7999999999999998
+Steuben County,IN,2.0999999999999996
+Sullivan County,IN,1.2999999999999998
+Switzerland County,IN,2.6999999999999997
+Tippecanoe County,IN,3.4000000000000004
+Tipton County,IN,1.7000000000000002
+Vanderburgh County,IN,3.4
+Vermillion County,IN,0.7999999999999998
+Vigo County,IN,3.0999999999999996
+Warrick County,IN,1.8000000000000003
+Wells County,IN,1.7000000000000002
+Whitley County,IN,1.8000000000000003
+Adair County,IA,1.2000000000000002
+Allamakee County,IA,-0.5
+Appanoose County,IA,2.4999999999999996
+Audubon County,IA,1.1
+Black Hawk County,IA,3.5999999999999996
+Bremer County,IA,1.3999999999999995
+Buchanan County,IA,1.5999999999999996
+Buena Vista County,IA,2.3999999999999995
+Cedar County,IA,1.7000000000000002
+Cerro Gordo County,IA,3.1
+Chickasaw County,IA,1.1
+Davis County,IA,1.9000000000000004
+Des Moines County,IA,3
+Dickinson County,IA,0.6000000000000005
+Dubuque County,IA,3.1
+Emmet County,IA,2
+Guthrie County,IA,1.6999999999999997
+Ida County,IA,1.1999999999999997
+Iowa County,IA,1.6
+Keokuk County,IA,0.7999999999999998
+Kossuth County,IA,1.4999999999999996
+Linn County,IA,5.3999999999999995
+Louisa County,IA,0.7000000000000002
+Lucas County,IA,2.2
+Lyon County,IA,0.40000000000000036
+Mahaska County,IA,2.4000000000000004
+Mills County,IA,2.1000000000000005
+Monona County,IA,1.6999999999999997
+Muscatine County,IA,3.0999999999999996
+O'Brien County,IA,1.6999999999999997
+Page County,IA,2.8000000000000003
+Palo Alto County,IA,2.2
+Plymouth County,IA,1.7999999999999998
+Pocahontas County,IA,1.5999999999999996
+Pottawattamie County,IA,3.3999999999999995
+Poweshiek County,IA,1.9
+Ringgold County,IA,1.5
+Sac County,IA,0.3999999999999999
+Sioux County,IA,0.2999999999999998
+Story County,IA,2.7
+Tama County,IA,1.5999999999999996
+Wapello County,IA,3.7
+Winneshiek County,IA,1.0999999999999996
+Woodbury County,IA,2.8999999999999995
+Wright County,IA,1.8000000000000003
+Anderson County,KS,1.8000000000000003
+Atchison County,KS,2.5999999999999996
+Barber County,KS,1.5
+Barton County,KS,1.4000000000000004
+Bourbon County,KS,2.5
+Chase County,KS,5
+Chautauqua County,KS,5.199999999999999
+Cloud County,KS,2.3000000000000003
+Coffey County,KS,2
+Comanche County,KS,1.7999999999999998
+Cowley County,KS,4.5
+Doniphan County,KS,1.3000000000000003
+Elk County,KS,3.6999999999999997
+Ellis County,KS,1.6999999999999997
+Ellsworth County,KS,1.4
+Finney County,KS,2.1
+Geary County,KS,4.6
+Gove County,KS,1.0999999999999999
+Gray County,KS,0.3999999999999999
+Greeley County,KS,0.40000000000000013
+Greenwood County,KS,2.6000000000000005
+Harper County,KS,4
+Harvey County,KS,3.1
+Haskell County,KS,0.6000000000000001
+Hodgeman County,KS,0
+Jewell County,KS,1.1999999999999997
+Kearny County,KS,1.5999999999999999
+Kingman County,KS,2.9999999999999996
+Labette County,KS,2.8999999999999995
+Lane County,KS,1
+Leavenworth County,KS,2.9000000000000004
+McPherson County,KS,1.5
+Meade County,KS,1.2999999999999998
+Morris County,KS,2
+Morton County,KS,1.8000000000000003
+Nemaha County,KS,0.3999999999999999
+Neosho County,KS,4.1
+Ness County,KS,1.6
+Norton County,KS,1.1
+Osage County,KS,2.1
+Osborne County,KS,0.5999999999999996
+Ottawa County,KS,2.5
+Pawnee County,KS,1
+Pottawatomie County,KS,2
+Pratt County,KS,2.1
+Rawlins County,KS,1.2999999999999998
+Reno County,KS,3.3
+Republic County,KS,1.5999999999999996
+Rice County,KS,2.5
+Riley County,KS,3.6999999999999997
+Rooks County,KS,1.9999999999999996
+Seward County,KS,2.3000000000000003
+Shawnee County,KS,3.4
+Sheridan County,KS,0.8000000000000003
+Sherman County,KS,1.1
+Smith County,KS,0.40000000000000036
+Stafford County,KS,2
+Stanton County,KS,-0.19999999999999973
+Stevens County,KS,0.7999999999999998
+Sumner County,KS,6.4
+Trego County,KS,0.6999999999999997
+Wabaunsee County,KS,0.30000000000000027
+Wallace County,KS,-0.6000000000000001
+Wichita County,KS,0.30000000000000004
+Wilson County,KS,4.5
+Woodson County,KS,4.3
+Wyandotte County,KS,5
+Ballard County,KY,1.4000000000000004
+Barren County,KY,3.6000000000000005
+Bath County,KY,0.09999999999999964
+Bell County,KY,2.0999999999999996
+Boyd County,KY,3.4000000000000004
+Boyle County,KY,4.799999999999999
+Bracken County,KY,0.40000000000000036
+Breathitt County,KY,1.6999999999999993
+Breckinridge County,KY,1.2999999999999998
+Bullitt County,KY,2.2
+Caldwell County,KY,2.0999999999999996
+Calloway County,KY,1.5999999999999996
+Campbell County,KY,3
+Carlisle County,KY,0.6000000000000005
+Carter County,KY,1.5999999999999996
+Casey County,KY,2.3999999999999995
+Edmonson County,KY,2.3
+Elliott County,KY,-0.5
+Estill County,KY,2.499999999999999
+Fleming County,KY,0.1999999999999993
+Garrard County,KY,2.3999999999999995
+Graves County,KY,2.2
+Grayson County,KY,2.799999999999999
+Green County,KY,1.3999999999999995
+Greenup County,KY,1.7000000000000002
+Harlan County,KY,4
+Hickman County,KY,0.6000000000000005
+Hopkins County,KY,3.7
+Jessamine County,KY,2.9000000000000004
+Kenton County,KY,3.1
+Knott County,KY,3.5
+Larue County,KY,2.0999999999999996
+Laurel County,KY,2.9000000000000004
+Leslie County,KY,1.3000000000000007
+Letcher County,KY,4.1
+McCracken County,KY,3.0999999999999996
+McCreary County,KY,1.5999999999999996
+Magoffin County,KY,1.8999999999999986
+Menifee County,KY,-0.10000000000000142
+Metcalfe County,KY,2.9000000000000004
+Muhlenberg County,KY,3.1000000000000005
+Nelson County,KY,1.7999999999999998
+Nicholas County,KY,1.9000000000000004
+Oldham County,KY,2.0000000000000004
+Owsley County,KY,1.2999999999999998
+Pendleton County,KY,1
+Powell County,KY,1.4999999999999991
+Robertson County,KY,0.39999999999999947
+Rockcastle County,KY,2.4000000000000004
+Rowan County,KY,2
+Simpson County,KY,2.5999999999999996
+Todd County,KY,1.2000000000000002
+Trigg County,KY,1.7999999999999998
+Trimble County,KY,2.0999999999999996
+Wolfe County,KY,0.1999999999999993
+Acadia Parish,LA,2.5
+Allen Parish,LA,2.700000000000001
+Ascension Parish,LA,2.6
+Assumption Parish,LA,3.8999999999999995
+Avoyelles Parish,LA,2.3999999999999995
+Beauregard Parish,LA,1.1999999999999993
+Bienville Parish,LA,2.2
+Bossier Parish,LA,2.2
+Caddo Parish,LA,4.1000000000000005
+Calcasieu Parish,LA,4.199999999999999
+Caldwell Parish,LA,-0.20000000000000018
+Cameron Parish,LA,1.2999999999999998
+Catahoula Parish,LA,1.7999999999999998
+Claiborne Parish,LA,0.39999999999999947
+Concordia Parish,LA,1.7999999999999998
+De Soto Parish,LA,1.4000000000000004
+East Baton Rouge Parish,LA,3.8999999999999995
+East Carroll Parish,LA,0.3999999999999986
+East Feliciana Parish,LA,2.7
+Evangeline Parish,LA,2.8999999999999995
+Franklin Parish,LA,1.1000000000000005
+Grant Parish,LA,0.5999999999999996
+Iberia Parish,LA,4.3999999999999995
+Iberville Parish,LA,4.4
+Jackson Parish,LA,0.5
+Jefferson Parish,LA,5.5
+Jefferson Davis Parish,LA,2.7
+Lafayette Parish,LA,2.9
+Lafourche Parish,LA,2.2
+LaSalle Parish,LA,1
+Lincoln Parish,LA,2
+Livingston Parish,LA,2.4
+Madison Parish,LA,0.8999999999999995
+Morehouse Parish,LA,0.9000000000000004
+Natchitoches Parish,LA,2.5
+Orleans Parish,LA,8.399999999999999
+Ouachita Parish,LA,2
+Plaquemines Parish,LA,2.9
+Pointe Coupee Parish,LA,3
+Rapides Parish,LA,1.6999999999999993
+Red River Parish,LA,0.8999999999999995
+Richland Parish,LA,1
+Sabine Parish,LA,1.1999999999999993
+St. Bernard Parish,LA,5.800000000000001
+St. Charles Parish,LA,3.6000000000000005
+St. Helena Parish,LA,7.000000000000001
+St. James Parish,LA,4.5
+St. John the Baptist Parish,LA,6.4
+St. Landry Parish,LA,3.000000000000001
+St. Martin Parish,LA,3.5
+St. Mary Parish,LA,3.999999999999999
+St. Tammany Parish,LA,2.7
+Tangipahoa Parish,LA,4.999999999999999
+Tensas Parish,LA,-1.3000000000000007
+Terrebonne Parish,LA,3.5
+Union Parish,LA,1.2000000000000002
+Vermilion Parish,LA,2.5999999999999996
+Vernon Parish,LA,0.6000000000000005
+Washington Parish,LA,3.1999999999999993
+Webster Parish,LA,1.8999999999999995
+West Baton Rouge Parish,LA,3.2
+West Carroll Parish,LA,-3.3000000000000007
+West Feliciana Parish,LA,1.0999999999999996
+Winn Parish,LA,1.2000000000000002
+Androscoggin County,ME,3
+Aroostook County,ME,-0.1999999999999993
+Kennebec County,ME,1.7000000000000002
+Oxford County,ME,3.3
+Penobscot County,ME,1.4000000000000004
+Piscataquis County,ME,0.10000000000000053
+Sagadahoc County,ME,2.7
+Somerset County,ME,0.40000000000000036
+Waldo County,ME,0.7999999999999998
+York County,ME,2.2
+Allegany County,MD,1.7999999999999998
+Anne Arundel County,MD,3
+Baltimore County,MD,3.6
+Calvert County,MD,2.3
+Caroline County,MD,1.7999999999999998
+Cecil County,MD,2.1000000000000005
+Charles County,MD,3.9000000000000004
+Dorchester County,MD,2.0999999999999996
+Frederick County,MD,2.8999999999999995
+Garrett County,MD,0.39999999999999947
+Harford County,MD,2.5000000000000004
+Prince George's County,MD,5.6
+Queen Anne's County,MD,2
+St. Mary's County,MD,2.2
+Wicomico County,MD,1.5999999999999996
+Worcester County,MD,-1.3000000000000007
+Baltimore city,MD,4.8
+Barnstable County,MA,4.300000000000001
+Berkshire County,MA,6.7
+Bristol County,MA,7.5
+Dukes County,MA,-0.39999999999999947
+Essex County,MA,9.2
+Hampden County,MA,9.2
+Hampshire County,MA,6.1
+Nantucket County/town,MA,-5.5
+Norfolk County,MA,7.999999999999999
+Suffolk County,MA,10.8
+Alcona County,MI,1.2999999999999998
+Alger County,MI,1.3999999999999995
+Allegan County,MI,3.5000000000000004
+Alpena County,MI,2.6000000000000005
+Antrim County,MI,2
+Arenac County,MI,1.3999999999999995
+Baraga County,MI,5
+Barry County,MI,3.6999999999999997
+Benzie County,MI,1.0999999999999996
+Branch County,MI,4.3
+Charlevoix County,MI,2
+Cheboygan County,MI,-6.6000000000000005
+Chippewa County,MI,1.0999999999999996
+Clare County,MI,3.9000000000000004
+Eaton County,MI,4.300000000000001
+Genesee County,MI,6.5
+Gladwin County,MI,3.000000000000001
+Gogebic County,MI,2
+Grand Traverse County,MI,3.2
+Gratiot County,MI,3.0000000000000004
+Hillsdale County,MI,4.1
+Houghton County,MI,2.7
+Huron County,MI,2
+Ingham County,MI,5.2
+Ionia County,MI,3.9
+Iosco County,MI,1.9000000000000004
+Iron County,MI,0.5999999999999996
+Isabella County,MI,3.4999999999999996
+Kalamazoo County,MI,5
+Kalkaska County,MI,2.4000000000000004
+Keweenaw County,MI,2.799999999999999
+Lapeer County,MI,2.6000000000000005
+Leelanau County,MI,2.1999999999999997
+Lenawee County,MI,4.199999999999999
+Luce County,MI,1.2999999999999998
+Mackinac County,MI,-13.299999999999999
+Macomb County,MI,5.999999999999999
+Manistee County,MI,3.6000000000000005
+Marquette County,MI,1.8999999999999995
+Mecosta County,MI,3
+Menominee County,MI,2.1000000000000005
+Midland County,MI,3.3
+Missaukee County,MI,1.7000000000000002
+Montcalm County,MI,4.3
+Montmorency County,MI,1.5999999999999996
+Muskegon County,MI,7.500000000000001
+Newaygo County,MI,3.7
+Oakland County,MI,5.1
+Oceana County,MI,2.6000000000000005
+Ogemaw County,MI,1.2999999999999998
+Ontonagon County,MI,3.500000000000001
+Oscoda County,MI,3.6999999999999993
+Otsego County,MI,3.6999999999999993
+Presque Isle County,MI,-1.4000000000000004
+Roscommon County,MI,2.1999999999999993
+Saginaw County,MI,5.299999999999999
+Sanilac County,MI,2.7
+Schoolcraft County,MI,-0.2999999999999998
+Shiawassee County,MI,3.8
+Tuscola County,MI,3
+Washtenaw County,MI,4.7
+Wexford County,MI,3.8000000000000007
+Aitkin County,MN,-0.7000000000000002
+Anoka County,MN,4.3
+Becker County,MN,-0.09999999999999964
+Beltrami County,MN,1.0999999999999996
+Big Stone County,MN,-2.6
+Blue Earth County,MN,3.3000000000000003
+Carlton County,MN,2.3999999999999995
+Carver County,MN,3.4000000000000004
+Chisago County,MN,1.7999999999999998
+Cottonwood County,MN,0.7999999999999998
+Crow Wing County,MN,1
+Dakota County,MN,4.699999999999999
+Faribault County,MN,0.5
+Fillmore County,MN,0
+Freeborn County,MN,2.3
+Goodhue County,MN,2
+Hennepin County,MN,6
+Hubbard County,MN,-1.0999999999999996
+Isanti County,MN,1.6000000000000005
+Itasca County,MN,1.5
+Kanabec County,MN,-2.999999999999999
+Kandiyohi County,MN,0.20000000000000018
+Kittson County,MN,-0.09999999999999964
+Koochiching County,MN,0.8000000000000007
+Lac qui Parle County,MN,-1.7000000000000002
+Lake of the Woods County,MN,2.5
+Le Sueur County,MN,-0.3000000000000007
+McLeod County,MN,1.2999999999999998
+Mahnomen County,MN,6.5
+Meeker County,MN,-0.6000000000000005
+Mille Lacs County,MN,-0.20000000000000018
+Morrison County,MN,-2.6999999999999993
+Mower County,MN,1.9
+Nicollet County,MN,2.9999999999999996
+Nobles County,MN,1.1999999999999997
+Norman County,MN,-0.20000000000000018
+Olmsted County,MN,3.6
+Otter Tail County,MN,-1
+Pennington County,MN,-2.6000000000000005
+Pine County,MN,-0.2999999999999998
+Pipestone County,MN,-1.6
+Ramsey County,MN,6.1
+Red Lake County,MN,-3.999999999999999
+Redwood County,MN,1
+Renville County,MN,-1.0999999999999996
+Rock County,MN,0.8999999999999999
+Roseau County,MN,-0.09999999999999964
+St. Louis County,MN,3.5
+Sherburne County,MN,1.8999999999999995
+Sibley County,MN,0.39999999999999947
+Stearns County,MN,2.1000000000000005
+Steele County,MN,2.1999999999999997
+Swift County,MN,1.5999999999999996
+Traverse County,MN,-2.0999999999999996
+Wabasha County,MN,0.7000000000000002
+Wadena County,MN,-2.4000000000000004
+Waseca County,MN,1.4000000000000004
+Watonwan County,MN,0
+Wilkin County,MN,0
+Winona County,MN,2.1999999999999997
+Yellow Medicine County,MN,-0.20000000000000018
+Alcorn County,MS,1.0999999999999996
+Amite County,MS,2.5
+Attala County,MS,2.1999999999999993
+Bolivar County,MS,1.700000000000001
+Claiborne County,MS,6
+Coahoma County,MS,4.300000000000001
+Copiah County,MS,2.1999999999999993
+Forrest County,MS,3.5999999999999996
+George County,MS,3.3
+Grenada County,MS,2.3
+Hinds County,MS,4.2
+Humphreys County,MS,3.700000000000001
+Issaquena County,MS,0.3000000000000007
+Itawamba County,MS,1.0999999999999996
+Jefferson Davis County,MS,3.7
+Kemper County,MS,2.3999999999999995
+Leake County,MS,2
+Leflore County,MS,3.8999999999999995
+Neshoba County,MS,2.6000000000000005
+Noxubee County,MS,5.800000000000001
+Oktibbeha County,MS,2.5
+Panola County,MS,4.2
+Pearl River County,MS,3
+Pontotoc County,MS,2.3000000000000007
+Prentiss County,MS,1.6000000000000005
+Rankin County,MS,0.9000000000000004
+Sharkey County,MS,0.8000000000000007
+Sunflower County,MS,2.4000000000000004
+Tallahatchie County,MS,1.6999999999999993
+Tate County,MS,3.2
+Tippah County,MS,1.8000000000000007
+Tishomingo County,MS,0.8999999999999995
+Tunica County,MS,8.6
+Walthall County,MS,2.5999999999999996
+Yalobusha County,MS,2.4000000000000004
+Yazoo County,MS,3.799999999999999
+Andrew County,MO,1.7999999999999998
+Audrain County,MO,1.5
+Bates County,MO,2.1999999999999993
+Bollinger County,MO,2
+Callaway County,MO,2.0999999999999996
+Cape Girardeau County,MO,2.8
+Chariton County,MO,0.6999999999999997
+Cole County,MO,3.1999999999999997
+Cooper County,MO,1.9000000000000004
+Dent County,MO,1.4000000000000004
+Dunklin County,MO,1.9999999999999991
+Gasconade County,MO,1.6999999999999997
+Gentry County,MO,1.2999999999999998
+Hickory County,MO,0.10000000000000053
+Holt County,MO,0.9999999999999996
+Howell County,MO,3.7
+Laclede County,MO,1.7999999999999998
+McDonald County,MO,3
+Maries County,MO,2.7
+Moniteau County,MO,1.6999999999999997
+New Madrid County,MO,2.3
+Nodaway County,MO,1.2000000000000002
+Oregon County,MO,2.8999999999999995
+Ozark County,MO,1.4000000000000004
+Pemiscot County,MO,4.199999999999999
+Pettis County,MO,1
+Phelps County,MO,1.7000000000000002
+Platte County,MO,3.5
+Ralls County,MO,1.7999999999999998
+Ray County,MO,2.7
+Reynolds County,MO,2.4000000000000004
+St. Charles County,MO,2.8000000000000003
+Ste. Genevieve County,MO,1.5
+St. Francois County,MO,3.5
+Scotland County,MO,1
+Shannon County,MO,2.1000000000000005
+Stoddard County,MO,0.7000000000000002
+Taney County,MO,-2
+Texas County,MO,2.2
+Vernon County,MO,1.8999999999999995
+St. Louis city,MO,7.300000000000001
+Beaverhead County,MT,0.10000000000000009
+Big Horn County,MT,-0.40000000000000036
+Broadwater County,MT,0.7000000000000002
+Carbon County,MT,0.7000000000000002
+Cascade County,MT,1.7000000000000002
+Chouteau County,MT,0.30000000000000027
+Daniels County,MT,-0.7999999999999998
+Deer Lodge County,MT,0.5000000000000004
+Fallon County,MT,2.5
+Fergus County,MT,-1.0999999999999996
+Flathead County,MT,0.09999999999999964
+Glacier County,MT,1.9000000000000004
+Golden Valley County,MT,-1.0000000000000004
+Granite County,MT,-0.7000000000000002
+Hill County,MT,1.6999999999999997
+Judith Basin County,MT,0.7999999999999998
+Lewis and Clark County,MT,1.1999999999999997
+McCone County,MT,1.9999999999999996
+Meagher County,MT,0.2999999999999998
+Missoula County,MT,1.5999999999999996
+Musselshell County,MT,0.3000000000000007
+Petroleum County,MT,-2.2
+Pondera County,MT,2.4
+Powder River County,MT,-1.1
+Ravalli County,MT,0.09999999999999964
+Roosevelt County,MT,1.5999999999999996
+Rosebud County,MT,0.20000000000000018
+Sanders County,MT,-1.4000000000000004
+Silver Bow County,MT,2.0999999999999996
+Stillwater County,MT,1.6999999999999997
+Sweet Grass County,MT,0.10000000000000009
+Toole County,MT,2.4000000000000004
+Treasure County,MT,2.0000000000000004
+Wheatland County,MT,1.6000000000000005
+Wibaux County,MT,1.9
+Yellowstone County,MT,1.3999999999999995
+Antelope County,NE,-0.8999999999999999
+Arthur County,NE,0
+Banner County,NE,-1.1
+Box Butte County,NE,1.9
+Buffalo County,NE,0.5
+Burt County,NE,-0.7000000000000002
+Cherry County,NE,-0.5
+Colfax County,NE,0.3999999999999999
+Cuming County,NE,-0.20000000000000018
+Dawes County,NE,0.30000000000000027
+Deuel County,NE,0
+Dixon County,NE,-0.7999999999999998
+Dundy County,NE,-0.09999999999999964
+Frontier County,NE,-1.2000000000000002
+Furnas County,NE,0.20000000000000018
+Gage County,NE,-0.20000000000000018
+Garden County,NE,-0.2999999999999998
+Gosper County,NE,0.10000000000000009
+Hayes County,NE,-0.7999999999999998
+Hitchcock County,NE,-0.20000000000000018
+Hooker County,NE,-1.6
+Kearney County,NE,0.6999999999999997
+Keith County,NE,-0.20000000000000018
+Keya Paha County,NE,-0.5
+Kimball County,NE,0.7999999999999998
+Lancaster County,NE,1.1999999999999997
+Loup County,NE,-1.2999999999999998
+Merrick County,NE,1
+Morrill County,NE,-0.6999999999999997
+Nance County,NE,0.20000000000000018
+Nuckolls County,NE,-0.8999999999999999
+Otoe County,NE,0.30000000000000027
+Perkins County,NE,-0.3999999999999999
+Red Willow County,NE,0.20000000000000018
+Richardson County,NE,-0.20000000000000018
+Sarpy County,NE,0.7000000000000002
+Saunders County,NE,0.40000000000000036
+Scotts Bluff County,NE,0.2999999999999998
+Thayer County,NE,-0.10000000000000009
+Thurston County,NE,0.8000000000000003
+Churchill County,NV,1.6999999999999997
+Elko County,NV,1.4000000000000004
+Esmeralda County,NV,0.3999999999999999
+Eureka County,NV,1.5
+Lander County,NV,0.5999999999999996
+Nye County,NV,4.799999999999999
+Pershing County,NV,0.5
+Storey County,NV,4
+Washoe County,NV,4.1
+White Pine County,NV,0.9000000000000004
+Carson City,NV,3.2
+Belknap County,NH,3.3
+Cheshire County,NH,2.8000000000000003
+Coos County,NH,2.5999999999999996
+Grafton County,NH,2.7
+Merrimack County,NH,2.9999999999999996
+Rockingham County,NH,3.5
+Strafford County,NH,3.3
+Atlantic County,NJ,11.499999999999998
+Bergen County,NJ,7.799999999999999
+Burlington County,NJ,5.6000000000000005
+Cape May County,NJ,-0.9000000000000004
+Gloucester County,NJ,5.8999999999999995
+Hudson County,NJ,9
+Hunterdon County,NJ,4.699999999999999
+Monmouth County,NJ,6.1000000000000005
+Ocean County,NJ,5.700000000000001
+Passaic County,NJ,9.3
+Salem County,NJ,4.8999999999999995
+Bernalillo County,NM,6.5
+Catron County,NM,1.1999999999999993
+Chaves County,NM,7
+Cibola County,NM,5.9
+Curry County,NM,3.8000000000000007
+De Baca County,NM,1.5
+Dona Ana County,NM,4.6000000000000005
+Eddy County,NM,6.9
+Guadalupe County,NM,5.199999999999999
+Harding County,NM,1.7999999999999998
+Hidalgo County,NM,3.3
+Lea County,NM,11.5
+Los Alamos County,NM,2.0999999999999996
+Luna County,NM,0
+McKinley County,NM,7.6
+Mora County,NM,3.3000000000000007
+Quay County,NM,5.3
+Rio Arriba County,NM,6.1000000000000005
+Sandoval County,NM,7.000000000000001
+Santa Fe County,NM,7.5
+Socorro County,NM,4
+Taos County,NM,8.600000000000001
+Torrance County,NM,5.5
+Valencia County,NM,5.699999999999999
+Albany County,NY,5.2
+Bronx County,NY,16.6
+Broome County,NY,4.199999999999999
+Cattaraugus County,NY,3.700000000000001
+Cayuga County,NY,3.9000000000000004
+Chemung County,NY,4.8999999999999995
+Chenango County,NY,1.9000000000000004
+Cortland County,NY,2.3999999999999995
+Dutchess County,NY,5.4
+Erie County,NY,5.999999999999999
+Herkimer County,NY,3.1000000000000005
+New York County,NY,9.9
+Niagara County,NY,5.000000000000001
+Onondaga County,NY,5.7
+Ontario County,NY,3.6999999999999993
+Orleans County,NY,4.199999999999999
+Oswego County,NY,3.4000000000000004
+Queens County,NY,13.3
+Rensselaer County,NY,4.200000000000001
+Rockland County,NY,6.7
+St. Lawrence County,NY,2.6999999999999993
+Saratoga County,NY,4.1
+Schenectady County,NY,6.199999999999999
+Schoharie County,NY,1.7999999999999998
+Seneca County,NY,4.000000000000001
+Tioga County,NY,3.4000000000000004
+Tompkins County,NY,3.5999999999999996
+Ulster County,NY,5.1
+Westchester County,NY,7.1
+Wyoming County,NY,1.4000000000000004
+Yates County,NY,1.8999999999999995
+Alamance County,NC,2.9999999999999996
+Alleghany County,NC,0.7999999999999998
+Anson County,NC,3.5999999999999996
+Ashe County,NC,1.1
+Avery County,NC,1.1
+Beaufort County,NC,1.5
+Bertie County,NC,0.6000000000000005
+Bladen County,NC,1.7000000000000002
+Brunswick County,NC,2.3
+Buncombe County,NC,4.6
+Cabarrus County,NC,3.1999999999999997
+Carteret County,NC,0.7000000000000002
+Caswell County,NC,2.5
+Catawba County,NC,3.5000000000000004
+Chowan County,NC,1.4000000000000004
+Columbus County,NC,2.5
+Craven County,NC,2.2
+Currituck County,NC,0.8999999999999999
+Dare County,NC,-1.5999999999999996
+Davidson County,NC,2.6999999999999997
+Davie County,NC,2.8
+Duplin County,NC,1.1000000000000005
+Durham County,NC,3.4
+Edgecombe County,NC,5.3999999999999995
+Gaston County,NC,3.7
+Gates County,NC,1.1999999999999997
+Granville County,NC,2.2
+Guilford County,NC,4.299999999999999
+Halifax County,NC,2.9000000000000004
+Harnett County,NC,2.5999999999999996
+Haywood County,NC,3.2
+Hertford County,NC,1.3000000000000007
+Hoke County,NC,3.500000000000001
+Hyde County,NC,-6.000000000000001
+Iredell County,NC,3
+Johnston County,NC,2.6
+Lenoir County,NC,2.3000000000000003
+McDowell County,NC,2
+Mecklenburg County,NC,4.199999999999999
+Moore County,NC,2.4
+Nash County,NC,3.6999999999999993
+New Hanover County,NC,3.0000000000000004
+Northampton County,NC,1.0999999999999996
+Onslow County,NC,2.0999999999999996
+Pamlico County,NC,1.7000000000000002
+Pasquotank County,NC,1.9000000000000004
+Pender County,NC,2.0999999999999996
+Perquimans County,NC,1
+Person County,NC,2.6999999999999997
+Pitt County,NC,2.6999999999999997
+Robeson County,NC,3.8000000000000007
+Rutherford County,NC,3.0999999999999996
+Sampson County,NC,1.5999999999999996
+Stanly County,NC,1.7000000000000002
+Stokes County,NC,2.0999999999999996
+Surry County,NC,2.1
+Swain County,NC,0.9000000000000004
+Transylvania County,NC,1.5
+Tyrrell County,NC,-0.7999999999999998
+Vance County,NC,4
+Wake County,NC,2.9
+Watauga County,NC,1.4999999999999996
+Yadkin County,NC,2.4
+Yancey County,NC,1.5999999999999996
+Barnes County,ND,0.6000000000000001
+Benson County,ND,1.3000000000000007
+Billings County,ND,1.2999999999999998
+Bottineau County,ND,0.7000000000000002
+Bowman County,ND,1.3000000000000003
+Burleigh County,ND,0.8000000000000003
+Cavalier County,ND,-0.2999999999999998
+Dickey County,ND,0.2999999999999998
+Divide County,ND,2.1
+Dunn County,ND,3
+Emmons County,ND,-1.5
+Foster County,ND,0.10000000000000009
+Grand Forks County,ND,1.7999999999999998
+Griggs County,ND,0.5
+Hettinger County,ND,1.0999999999999996
+Kidder County,ND,-1.5000000000000004
+LaMoure County,ND,-0.5
+McKenzie County,ND,5.6
+Mountrail County,ND,3.5999999999999996
+Oliver County,ND,-1.2999999999999998
+Pembina County,ND,0.20000000000000018
+Ransom County,ND,0.5
+Rolette County,ND,9.600000000000001
+Sargent County,ND,0.6000000000000001
+Slope County,ND,0.30000000000000027
+Stutsman County,ND,0.5
+Towner County,ND,-0.5
+Traill County,ND,0.2999999999999998
+Walsh County,ND,0.7999999999999998
+Ward County,ND,2.6999999999999997
+Williams County,ND,8.4
+Ashland County,OH,1.7999999999999998
+Ashtabula County,OH,2.6999999999999993
+Athens County,OH,2.9000000000000004
+Auglaize County,OH,2.8000000000000003
+Belmont County,OH,2.9000000000000004
+Clermont County,OH,3.3
+Columbiana County,OH,4.1
+Coshocton County,OH,2.1999999999999993
+Cuyahoga County,OH,6.6
+Darke County,OH,1.7000000000000002
+Defiance County,OH,2.5
+Gallia County,OH,0.7999999999999998
+Geauga County,OH,2
+Guernsey County,OH,0.9000000000000004
+Highland County,OH,2.6000000000000005
+Hocking County,OH,1.5
+Licking County,OH,3.2
+Lorain County,OH,4.300000000000001
+Mahoning County,OH,5.000000000000001
+Medina County,OH,3.1999999999999993
+Meigs County,OH,1.5
+Morrow County,OH,2.0999999999999996
+Muskingum County,OH,1.5
+Pickaway County,OH,2.5
+Portage County,OH,3
+Preble County,OH,2
+Ross County,OH,2.5
+Sandusky County,OH,2.1000000000000005
+Scioto County,OH,1.2999999999999998
+Trumbull County,OH,4.500000000000001
+Tuscarawas County,OH,2
+Van Wert County,OH,1.5
+Vinton County,OH,0.7999999999999989
+Wood County,OH,3
+Wyandot County,OH,2.1
+Alfalfa County,OK,1.2999999999999998
+Atoka County,OK,2.4000000000000004
+Beaver County,OK,0.30000000000000004
+Beckham County,OK,3.7
+Caddo County,OK,1.9999999999999996
+Canadian County,OK,2.8
+Cimarron County,OK,0.3999999999999999
+Coal County,OK,2
+Cotton County,OK,3.7
+Craig County,OK,1.2000000000000002
+Creek County,OK,2.6999999999999997
+Dewey County,OK,2.4000000000000004
+Garvin County,OK,2.9
+Greer County,OK,3.4999999999999996
+Harmon County,OK,0.7999999999999998
+Hughes County,OK,2.3
+Kay County,OK,2.3
+Kingfisher County,OK,2.2
+Latimer County,OK,2.499999999999999
+Le Flore County,OK,2.2
+Love County,OK,1.6999999999999997
+McClain County,OK,2.7
+McCurtain County,OK,1.2999999999999998
+Major County,OK,2.5999999999999996
+Mayes County,OK,2
+Muskogee County,OK,1.7999999999999998
+Nowata County,OK,2.0000000000000004
+Okfuskee County,OK,1.2000000000000002
+Oklahoma County,OK,3.2
+Okmulgee County,OK,2.3
+Payne County,OK,1.8000000000000003
+Pittsburg County,OK,2.8
+Pushmataha County,OK,1.2000000000000002
+Roger Mills County,OK,2
+Rogers County,OK,2.6
+Sequoyah County,OK,2
+Tillman County,OK,0.9999999999999996
+Tulsa County,OK,3.3000000000000003
+Wagoner County,OK,2.4000000000000004
+Washita County,OK,3.3
+Woods County,OK,1.5999999999999999
+Woodward County,OK,4.1
+Clackamas County,OR,5.000000000000001
+Clatsop County,OR,4.9
+Crook County,OR,3.2
+Deschutes County,OR,4
+Gilliam County,OR,0.7000000000000002
+Harney County,OR,-0.7000000000000002
+Hood River County,OR,2.9999999999999996
+Josephine County,OR,3.700000000000001
+Klamath County,OR,1
+Malheur County,OR,1
+Multnomah County,OR,7.3
+Tillamook County,OR,3.8000000000000007
+Umatilla County,OR,1.9000000000000004
+Wallowa County,OR,-1.9000000000000004
+Wasco County,OR,2.5
+Yamhill County,OR,3.9
+Allegheny County,PA,6.3
+Armstrong County,PA,3.8
+Bedford County,PA,2.6000000000000005
+Berks County,PA,5.4
+Blair County,PA,3.9000000000000004
+Bucks County,PA,5.300000000000001
+Cambria County,PA,4.199999999999999
+Cameron County,PA,4.799999999999999
+Centre County,PA,2.4000000000000004
+Chester County,PA,4.1
+Clarion County,PA,1.9000000000000004
+Clearfield County,PA,2.6999999999999993
+Dauphin County,PA,5.800000000000001
+Forest County,PA,2
+Huntingdon County,PA,2.6999999999999993
+Indiana County,PA,4.1000000000000005
+Juniata County,PA,1.2999999999999998
+Lackawanna County,PA,5.6
+Lebanon County,PA,4.6
+Lehigh County,PA,6.4
+Luzerne County,PA,6
+Lycoming County,PA,4.1
+McKean County,PA,2.8999999999999995
+Mifflin County,PA,3.3
+Montour County,PA,2.6
+Northumberland County,PA,3.6000000000000005
+Philadelphia County/city,PA,9.9
+Potter County,PA,0.5999999999999996
+Schuylkill County,PA,4.4
+Snyder County,PA,1.3999999999999995
+Susquehanna County,PA,1.7999999999999998
+Venango County,PA,3.3999999999999995
+Westmoreland County,PA,4.6
+Newport County,RI,6.699999999999999
+Providence County,RI,10.2
+Abbeville County,SC,2.5
+Aiken County,SC,1.8000000000000003
+Allendale County,SC,4.4
+Bamberg County,SC,4.2
+Barnwell County,SC,3.2
+Berkeley County,SC,3.5999999999999996
+Charleston County,SC,4.9
+Chesterfield County,SC,3.4
+Clarendon County,SC,3
+Colleton County,SC,3.6999999999999997
+Darlington County,SC,4.199999999999999
+Dillon County,SC,2.4000000000000004
+Edgefield County,SC,1.9000000000000004
+Florence County,SC,3.3000000000000003
+Georgetown County,SC,3.8999999999999995
+Greenville County,SC,3.1999999999999997
+Hampton County,SC,2.8
+Horry County,SC,4.1000000000000005
+Kershaw County,SC,2.3000000000000003
+Lexington County,SC,2.2
+McCormick County,SC,2.5
+Marlboro County,SC,6.2
+Newberry County,SC,2.5
+Orangeburg County,SC,5.3999999999999995
+Saluda County,SC,1.2999999999999998
+Spartanburg County,SC,4.3
+Williamsburg County,SC,4.6
+Aurora County,SD,0.3999999999999999
+Beadle County,SD,0.9000000000000004
+Bennett County,SD,-0.2999999999999998
+Bon Homme County,SD,0.49999999999999956
+Brookings County,SD,1.3000000000000003
+Brule County,SD,0.6999999999999997
+Charles Mix County,SD,5.699999999999999
+Codington County,SD,1.4
+Corson County,SD,2.4000000000000004
+Davison County,SD,0.6000000000000001
+Day County,SD,-1.2999999999999998
+Edmunds County,SD,-0.30000000000000027
+Fall River County,SD,1.7000000000000002
+Faulk County,SD,0.10000000000000009
+Gregory County,SD,0.2999999999999998
+Haakon County,SD,-0.30000000000000027
+Hamlin County,SD,-0.20000000000000018
+Hand County,SD,0.40000000000000036
+Hanson County,SD,-1.4000000000000004
+Hutchinson County,SD,-0.7000000000000002
+Jerauld County,SD,0.8999999999999999
+Kingsbury County,SD,-0.19999999999999973
+Lyman County,SD,1.2999999999999998
+McCook County,SD,0.5
+Mellette County,SD,0.20000000000000018
+Miner County,SD,3
+Minnehaha County,SD,1.1000000000000005
+Moody County,SD,1.6999999999999997
+Oglala Lakota County,SD,6.199999999999999
+Roberts County,SD,-0.20000000000000018
+Sanborn County,SD,0.5
+Spink County,SD,-0.5999999999999996
+Stanley County,SD,-0.3999999999999999
+Sully County,SD,1.5999999999999996
+Tripp County,SD,0.10000000000000009
+Walworth County,SD,-0.7999999999999998
+Yankton County,SD,1.4
+Ziebach County,SD,3.7
+Bledsoe County,TN,2
+Cannon County,TN,2.9999999999999996
+Cheatham County,TN,3.6
+Cocke County,TN,3.1999999999999993
+Crockett County,TN,1.7000000000000002
+Dickson County,TN,3.0999999999999996
+Dyer County,TN,2.8999999999999995
+Fentress County,TN,2
+Giles County,TN,3.0999999999999996
+Grainger County,TN,2.5
+Hamblen County,TN,3
+Hardeman County,TN,4.199999999999999
+Hawkins County,TN,3
+Loudon County,TN,2.7
+McMinn County,TN,3.6000000000000005
+McNairy County,TN,3.0999999999999996
+Maury County,TN,4.8999999999999995
+Obion County,TN,2.2
+Overton County,TN,0.8999999999999995
+Pickett County,TN,-0.09999999999999964
+Rhea County,TN,3.1000000000000005
+Roane County,TN,2.0999999999999996
+Sequatchie County,TN,3.2
+Trousdale County,TN,3.7
+Unicoi County,TN,2.3
+Weakley County,TN,2.5000000000000004
+Andrews County,TX,5.4
+Angelina County,TX,2.8
+Aransas County,TX,3
+Archer County,TX,1.5999999999999996
+Atascosa County,TX,4.2
+Austin County,TX,2.4000000000000004
+Bailey County,TX,0.39999999999999947
+Bandera County,TX,1.8999999999999995
+Bastrop County,TX,2.4
+Baylor County,TX,0.19999999999999973
+Bee County,TX,4.8
+Bexar County,TX,3.8000000000000003
+Blanco County,TX,0.8999999999999999
+Borden County,TX,0.8000000000000003
+Bosque County,TX,1.1
+Bowie County,TX,1.9000000000000004
+Brazoria County,TX,3.6000000000000005
+Brazos County,TX,1.9999999999999996
+Brewster County,TX,3.0000000000000004
+Briscoe County,TX,-0.10000000000000009
+Burleson County,TX,2.0999999999999996
+Burnet County,TX,1.2999999999999998
+Callahan County,TX,1.6
+Camp County,TX,2.8
+Carson County,TX,0.7000000000000002
+Castro County,TX,0.40000000000000036
+Childress County,TX,0.3999999999999999
+Cochran County,TX,3.2
+Coke County,TX,2.0000000000000004
+Coleman County,TX,2.1000000000000005
+Collin County,TX,2.5
+Collingsworth County,TX,0
+Colorado County,TX,1.8000000000000003
+Comal County,TX,2.4000000000000004
+Concho County,TX,1
+Cooke County,TX,2.9
+Coryell County,TX,1.7999999999999998
+Cottle County,TX,-0.5999999999999996
+Crane County,TX,8.7
+Crosby County,TX,0.6000000000000001
+Culberson County,TX,4.5
+Dallam County,TX,0.2999999999999998
+Deaf Smith County,TX,0.40000000000000036
+Denton County,TX,2.8000000000000003
+DeWitt County,TX,3.1999999999999997
+Dickens County,TX,1
+Dimmit County,TX,2.8
+Donley County,TX,1.2000000000000002
+Eastland County,TX,2.3
+Ector County,TX,7.8
+Erath County,TX,1.5
+Falls County,TX,1.7999999999999998
+Fisher County,TX,1.7000000000000002
+Foard County,TX,0.20000000000000018
+Fort Bend County,TX,3.7
+Freestone County,TX,2.7
+Frio County,TX,2.2
+Gaines County,TX,2.6999999999999997
+Galveston County,TX,3.9000000000000004
+Garza County,TX,3.6
+Gillespie County,TX,1.4
+Glasscock County,TX,1.2999999999999998
+Goliad County,TX,3.9000000000000004
+Gonzales County,TX,2.1
+Gregg County,TX,3.6000000000000005
+Grimes County,TX,3.2
+Hansford County,TX,1
+Hartley County,TX,-0.19999999999999996
+Hays County,TX,2.8999999999999995
+Hemphill County,TX,0.6000000000000001
+Hockley County,TX,4.4
+Hood County,TX,2.4000000000000004
+Hudspeth County,TX,3.2
+Hunt County,TX,2.2
+Irion County,TX,3.3
+Jack County,TX,2.3
+Jim Hogg County,TX,5.3999999999999995
+Jim Wells County,TX,6.999999999999999
+Karnes County,TX,3.6
+Kaufman County,TX,2.7
+Kenedy County,TX,1.1999999999999997
+Kerr County,TX,1.3999999999999995
+Kimble County,TX,1.6
+King County,TX,-1.2
+Kinney County,TX,-0.2999999999999998
+Kleberg County,TX,3.5999999999999996
+Lamb County,TX,0.7000000000000002
+Lampasas County,TX,1.1000000000000005
+La Salle County,TX,2.8000000000000003
+Lavaca County,TX,2.3000000000000003
+Lipscomb County,TX,1.0999999999999996
+Live Oak County,TX,3.5
+Llano County,TX,1.4
+Loving County,TX,-0.19999999999999996
+Lubbock County,TX,2.5
+Lynn County,TX,0.8000000000000003
+McCulloch County,TX,2
+McLennan County,TX,2.1000000000000005
+McMullen County,TX,1.1
+Matagorda County,TX,3.8999999999999995
+Maverick County,TX,4.1
+Milam County,TX,2
+Montague County,TX,2.8
+Motley County,TX,0.19999999999999973
+Nacogdoches County,TX,2.3
+Navarro County,TX,1.9
+Nolan County,TX,1.9000000000000004
+Nueces County,TX,4.1000000000000005
+Ochiltree County,TX,2.0000000000000004
+Palo Pinto County,TX,3.4999999999999996
+Parker County,TX,2.1999999999999997
+Parmer County,TX,-0.19999999999999973
+Pecos County,TX,4.8
+Presidio County,TX,5.9
+Rains County,TX,1.1999999999999997
+Randall County,TX,1.2999999999999998
+Reagan County,TX,6.6000000000000005
+Real County,TX,2
+Red River County,TX,0.7000000000000002
+Reeves County,TX,3.3
+Refugio County,TX,4.2
+Rockwall County,TX,2.2
+Runnels County,TX,1
+Rusk County,TX,2.8
+Sabine County,TX,3.5999999999999996
+San Augustine County,TX,2.7
+San Jacinto County,TX,2.8
+San Patricio County,TX,3.8000000000000007
+San Saba County,TX,0.3999999999999999
+Schleicher County,TX,3.8
+Scurry County,TX,3.8
+Shackelford County,TX,2.5
+Somervell County,TX,1.8999999999999995
+Starr County,TX,2.6999999999999993
+Sterling County,TX,2.3
+Stonewall County,TX,1.6000000000000005
+Sutton County,TX,4.5
+Swisher County,TX,0.7000000000000002
+Tarrant County,TX,3.3999999999999995
+Terry County,TX,3.4000000000000004
+Throckmorton County,TX,0.8999999999999995
+Titus County,TX,2.0999999999999996
+Tom Green County,TX,2.9000000000000004
+Travis County,TX,3.1
+Tyler County,TX,3.5
+Upshur County,TX,2.7
+Upton County,TX,2.6000000000000005
+Uvalde County,TX,2.3000000000000003
+Val Verde County,TX,3.0999999999999996
+Van Zandt County,TX,2
+Victoria County,TX,3.7
+Waller County,TX,3.6000000000000005
+Webb County,TX,4
+Wharton County,TX,2.6999999999999997
+Wilbarger County,TX,1.0999999999999996
+Willacy County,TX,2.4000000000000004
+Winkler County,TX,6.6000000000000005
+Wise County,TX,2.4
+Yoakum County,TX,7.4
+Young County,TX,1.7000000000000002
+Zapata County,TX,4.999999999999999
+Zavala County,TX,4.800000000000001
+Box Elder County,UT,0.10000000000000009
+Cache County,UT,0.30000000000000027
+Daggett County,UT,-1.9999999999999996
+Duchesne County,UT,3
+Emery County,UT,-1.6000000000000005
+Juab County,UT,-0.2999999999999998
+Millard County,UT,0
+Piute County,UT,-0.7999999999999998
+Rich County,UT,-2.4
+Salt Lake County,UT,2
+Sanpete County,UT,-0.10000000000000009
+Tooele County,UT,1.3000000000000003
+Uintah County,UT,2.8999999999999995
+Utah County,UT,0.8999999999999999
+Wasatch County,UT,2.4000000000000004
+Weber County,UT,0.7999999999999998
+Addison County,VT,1
+Bennington County,VT,2.0999999999999996
+Caledonia County,VT,0.8999999999999999
+Chittenden County,VT,2.5
+Grand Isle County,VT,1.4999999999999996
+Lamoille County,VT,2.0999999999999996
+Rutland County,VT,2.9000000000000004
+Windsor County,VT,2.4000000000000004
+Accomack County,VA,1.6000000000000005
+Albemarle County,VA,3.0999999999999996
+Amelia County,VA,2.5999999999999996
+Amherst County,VA,2.2
+Appomattox County,VA,1.7999999999999998
+Arlington County,VA,2.8
+Augusta County,VA,1.7999999999999998
+Bland County,VA,2.3999999999999995
+Botetourt County,VA,1.4999999999999996
+Buckingham County,VA,2.3000000000000007
+Charles City County,VA,3
+Culpeper County,VA,1.9000000000000004
+Dickenson County,VA,1.5
+Dinwiddie County,VA,3.2
+Fairfax County,VA,3.9
+Fauquier County,VA,2.1000000000000005
+Fluvanna County,VA,2.8
+Goochland County,VA,2
+Greensville County,VA,4
+Hanover County,VA,2.3
+Henrico County,VA,4.1
+Isle of Wight County,VA,2.3
+James City County,VA,4
+King and Queen County,VA,2.6
+King George County,VA,1.5999999999999996
+King William County,VA,2.5
+Loudoun County,VA,3.2
+Lunenburg County,VA,2.5999999999999996
+Mathews County,VA,1.6999999999999997
+New Kent County,VA,2.2
+Nottoway County,VA,2.6000000000000005
+Patrick County,VA,2.7
+Pittsylvania County,VA,2.2
+Powhatan County,VA,1.8000000000000003
+Prince Edward County,VA,2.9
+Prince George County,VA,3.3
+Prince William County,VA,4.300000000000001
+Rappahannock County,VA,2.0000000000000004
+Roanoke County,VA,2.1999999999999997
+Rockbridge County,VA,1.7999999999999998
+Shenandoah County,VA,2.4000000000000004
+Smyth County,VA,1.9000000000000004
+Southampton County,VA,2.8
+Spotsylvania County,VA,3.1000000000000005
+Wythe County,VA,2.9000000000000004
+Alexandria city,VA,4.1
+Bristol city,VA,2.8000000000000003
+Buena Vista city,VA,2.3999999999999995
+Charlottesville city,VA,4.4
+Chesapeake city,VA,3.7
+Colonial Heights city,VA,4.5
+Covington city,VA,2.299999999999999
+Danville city,VA,4.199999999999999
+Emporia city,VA,8.6
+Fairfax city,VA,3.5999999999999996
+Falls Church city,VA,1.7
+Franklin city,VA,6.299999999999999
+Fredericksburg city,VA,4.3
+Galax city,VA,3.6
+Hampton city,VA,5.3
+Harrisonburg city,VA,3.5999999999999996
+Hopewell city,VA,7.700000000000001
+Lexington city,VA,2.9
+Lynchburg city,VA,4
+Manassas city,VA,4.1
+Manassas Park city,VA,4.699999999999999
+Martinsville city,VA,6.9
+Newport News city,VA,5.700000000000001
+Norfolk city,VA,6.1000000000000005
+Norton city,VA,2.8
+Petersburg city,VA,9.799999999999999
+Poquoson city,VA,1.6
+Portsmouth city,VA,7.000000000000001
+Radford city,VA,3
+Richmond city,VA,6.3
+Roanoke city,VA,5.200000000000001
+Salem city,VA,2.7
+Staunton city,VA,3.4
+Suffolk city,VA,4.1
+Virginia Beach city,VA,3.4
+Waynesboro city,VA,3.5
+Williamsburg city,VA,4.3
+Winchester city,VA,3.0999999999999996
+Asotin County,WA,1.4000000000000004
+Chelan County,WA,2.1999999999999993
+Clallam County,WA,3
+Cowlitz County,WA,3.5
+Ferry County,WA,-3.4000000000000004
+Grays Harbor County,WA,4
+Island County,WA,3.5
+Kitsap County,WA,3.3999999999999995
+Kittitas County,WA,4
+Klickitat County,WA,1.5999999999999996
+Okanogan County,WA,0.5
+Pacific County,WA,4.200000000000001
+Pend Oreille County,WA,2.200000000000001
+Skagit County,WA,3.8999999999999995
+Skamania County,WA,4.699999999999999
+Snohomish County,WA,4.9
+Spokane County,WA,3.5
+Wahkiakum County,WA,1.8999999999999995
+Walla Walla County,WA,2
+Whatcom County,WA,4.300000000000001
+Whitman County,WA,2.1000000000000005
+Yakima County,WA,2
+Braxton County,WV,0.29999999999999893
+Brooke County,WV,4
+Cabell County,WV,4.4
+Doddridge County,WV,1.4000000000000004
+Greenbrier County,WV,1.9000000000000004
+Hardy County,WV,1.2999999999999998
+Kanawha County,WV,5.000000000000001
+Mingo County,WV,7.399999999999999
+Monongalia County,WV,3.3000000000000003
+Pleasants County,WV,2.1000000000000014
+Preston County,WV,1.7000000000000002
+Raleigh County,WV,3.8999999999999995
+Ritchie County,WV,2
+Summers County,WV,1
+Tucker County,WV,1.5
+Wetzel County,WV,1.5
+Wirt County,WV,-1
+Barron County,WI,-1
+Bayfield County,WI,-0.9000000000000004
+Burnett County,WI,-0.39999999999999947
+Calumet County,WI,1
+Dane County,WI,2.5999999999999996
+Door County,WI,-0.20000000000000018
+Eau Claire County,WI,2.1999999999999997
+Fond du Lac County,WI,1.3000000000000003
+Green Lake County,WI,-0.9000000000000004
+Juneau County,WI,1.2000000000000002
+Kenosha County,WI,2.3
+Kewaunee County,WI,0
+La Crosse County,WI,2
+Langlade County,WI,1.4000000000000004
+Manitowoc County,WI,1.2999999999999998
+Marathon County,WI,1.2000000000000002
+Marinette County,WI,1.5
+Milwaukee County,WI,4.6000000000000005
+Oconto County,WI,-0.20000000000000018
+Outagamie County,WI,2
+Ozaukee County,WI,2.5000000000000004
+Pepin County,WI,-1.2999999999999998
+Price County,WI,-0.6000000000000005
+Racine County,WI,1.9000000000000004
+St. Croix County,WI,1.5
+Sauk County,WI,2.4
+Sawyer County,WI,0
+Shawano County,WI,1.2999999999999998
+Sheboygan County,WI,1.7999999999999998
+Trempealeau County,WI,1.1000000000000005
+Vilas County,WI,-0.20000000000000018
+Washburn County,WI,-0.09999999999999964
+Waukesha County,WI,2.3
+Waupaca County,WI,1.4
+Waushara County,WI,-0.39999999999999947
+Converse County,WY,3.3000000000000003
+Goshen County,WY,0.6000000000000001
+Hot Springs County,WY,0.7000000000000002
+Laramie County,WY,1
+Natrona County,WY,4.8
+Niobrara County,WY,0.19999999999999973
+Sublette County,WY,0.8000000000000007
+Sweetwater County,WY,2.3999999999999995
+Uinta County,WY,2.7
+Washakie County,WY,0.20000000000000018
+Weston County,WY,0.5999999999999996
+Adjuntas Municipio,PR,-7.699999999999999
+Aguada Municipio,PR,-1.0999999999999996
+Aguadilla Municipio,PR,0.1999999999999993
+Aguas Buenas Municipio,PR,0.6999999999999993
+Aibonito Municipio,PR,-1.0999999999999996
+Anasco Municipio,PR,-0.5999999999999996
+Arecibo Municipio,PR,-0.6999999999999993
+Arroyo Municipio,PR,-5.4
+Barceloneta Municipio,PR,-0.3000000000000007
+Barranquitas Municipio,PR,2.1000000000000005
+Bayamon Municipio,PR,3.3000000000000007
+Cabo Rojo Municipio,PR,0.09999999999999964
+Caguas Municipio,PR,1.7999999999999998
+Camuy Municipio,PR,-0.5999999999999996
+Canovanas Municipio,PR,2.5999999999999996
+Carolina Municipio,PR,3.5999999999999996
+Catano Municipio,PR,3.7
+Cayey Municipio,PR,0.5
+Ceiba Municipio,PR,1.3000000000000007
+Ciales Municipio,PR,2.200000000000001
+Cidra Municipio,PR,0.10000000000000053
+Coamo Municipio,PR,-2.0999999999999996
+Comerio Municipio,PR,0.5
+Corozal Municipio,PR,3.700000000000001
+Culebra Municipio,PR,4.9
+Dorado Municipio,PR,1.8999999999999995
+Fajardo Municipio,PR,2.1999999999999993
+Florida Municipio,PR,1.299999999999999
+Guanica Municipio,PR,-5.200000000000001
+Guayama Municipio,PR,-2.8
+Guayanilla Municipio,PR,-5.600000000000001
+Guaynabo Municipio,PR,1.8999999999999995
+Gurabo Municipio,PR,0.39999999999999947
+Hatillo Municipio,PR,-7.2
+Hormigueros Municipio,PR,0.5000000000000009
+Humacao Municipio,PR,-1.6000000000000005
+Isabela Municipio,PR,-0.8000000000000007
+Jayuya Municipio,PR,-4.8999999999999995
+Juana Diaz Municipio,PR,-1.5999999999999996
+Juncos Municipio,PR,1.3000000000000007
+Lajas Municipio,PR,-1.1999999999999993
+Lares Municipio,PR,-5.800000000000001
+Las Marias Municipio,PR,-1.5999999999999996
+Las Piedras Municipio,PR,0.1999999999999993
+Loiza Municipio,PR,1.9000000000000004
+Luquillo Municipio,PR,2.4000000000000004
+Manati Municipio,PR,1.2000000000000002
+Maricao Municipio,PR,-8.700000000000001
+Maunabo Municipio,PR,-8.4
+Mayaguez Municipio,PR,-1.200000000000001
+Moca Municipio,PR,-0.9000000000000004
+Morovis Municipio,PR,2.700000000000001
+Naguabo Municipio,PR,-0.2999999999999998
+Naranjito Municipio,PR,5.1
+Orocovis Municipio,PR,1.0999999999999996
+Patillas Municipio,PR,-6.999999999999998
+Penuelas Municipio,PR,-2.5999999999999996
+Ponce Municipio,PR,-0.3000000000000007
+Quebradillas Municipio,PR,-1.5999999999999996
+Rincon Municipio,PR,-8.100000000000001
+Rio Grande Municipio,PR,3.299999999999999
+Sabana Grande Municipio,PR,-4.300000000000001
+Salinas Municipio,PR,-3.200000000000001
+San German Municipio,PR,-2.3999999999999986
+San Juan Municipio,PR,3.0999999999999996
+San Lorenzo Municipio,PR,-0.5999999999999996
+San Sebastian Municipio,PR,-4.299999999999999
+Santa Isabel Municipio,PR,-0.5
+Toa Alta Municipio,PR,2.1000000000000005
+Toa Baja Municipio,PR,2.7
+Trujillo Alto Municipio,PR,1.9000000000000004
+Utuado Municipio,PR,-3.9000000000000004
+Vega Alta Municipio,PR,2.500000000000001
+Vega Baja Municipio,PR,3
+Vieques Municipio,PR,4.4
+Villalba Municipio,PR,-8.899999999999999
+Yabucoa Municipio,PR,-3
+Yauco Municipio,PR,-6.799999999999999
