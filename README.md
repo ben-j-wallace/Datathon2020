@@ -8,7 +8,7 @@ The COVID-19 pandemic has changed virtually every facet of our lives. As the mon
 
 ## Proposition
 
-We suspect that movement in retail, groceries, and workplace relate the most to the overall economic impact of the COVID-19. Using data   
+We suspect that movement trends in retail, grocery, and workplace spaces relate the most to the overall economic impact of the COVID-19.    
 
 ## Solution
 
