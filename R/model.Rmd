@@ -57,16 +57,6 @@ ggplot(data = sample_data, mapping = aes(x = grocery_avg)) +
 ```
 
 ```{r}
-ggplot(data = sample_data, mapping = aes(x = parks_avg)) +
-  geom_histogram()
-```
-
-```{r}
-ggplot(data = sample_data, mapping = aes(x = transit_avg)) +
-  geom_histogram()
-```
-
-```{r}
 ggplot(data = sample_data, mapping = aes(x = workplaces_avg)) +
   geom_histogram()
 ```
@@ -110,28 +100,6 @@ merged_data %>%
 
 ```{r}
 merged_data %>% 
-  filter(!is.na(parks_avg)) %>% 
-  summarise(mean = mean(parks_avg),
-          median = median(parks_avg),
-          sd = sd(parks_avg),
-          iqr = IQR(parks_avg),
-          min = min(parks_avg),
-          max = max(parks_avg))
-```
-
-```{r}
-merged_data %>% 
-  filter(!is.na(transit_avg)) %>%
-  summarise(mean = mean(transit_avg),
-          median = median(transit_avg),
-          sd = sd(transit_avg),
-          iqr = IQR(transit_avg),
-          min = min(transit_avg),
-          max = max(transit_avg))
-```
-
-```{r}
-merged_data %>% 
   filter(!is.na(workplaces_avg)) %>%
   summarise(mean = mean(workplaces_avg),
           median = median(workplaces_avg),
@@ -166,13 +134,6 @@ merged_data %>%
   geom_point()
 ```
 
-
-```{r}
-merged_data %>%
-  ggplot(aes(y = unemployment_change, x = parks_avg)) +
-  geom_point()
-```
-
 ```{r}
 merged_data %>%
   ggplot(aes(y = unemployment_change, x = workplaces_avg)) +
@@ -187,29 +148,18 @@ merged_data %>%
 
 ## Model
 
-```{r}
-model <- lm(unemployment_change ~ retail_avg + 
-              grocery_avg + 
-              parks_avg + 
-              transit_avg + 
-              workplaces_avg + 
-              residential_avg, 
-            data = merged_data)
-
-model %>%
-  tidy(conf.int = TRUE) %>%
-  kable(digits = 3)
-```
-
 ```{r backward selection}
 int_only_model <- lm(unemployment_change ~ 1, data = merged_data)
 
 final_model <- step(model, scope = formula(int_only_model), direction = "backward")
 
+final_model %>%
+  tidy(conf.int = TRUE) %>%
+  kable(digits = 3)
 ```
 
 ```{r}
-augment(model) %>%
+augment(final_model) %>%
   ggplot(aes(x = .fitted, y = .resid)) +
   geom_point() +
   theme_grey(base_size = 14) +
