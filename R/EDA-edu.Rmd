@@ -31,6 +31,9 @@ edu = edu[1:101,]
 
 edu <- edu %>%
   arrange(desc(somecollege))
+
+edu <- edu%>%
+  mutate(county = str_sub(county, 0, -7))
 ```
 
 ```{r}
@@ -43,3 +46,6 @@ ggplot(data = edu, aes(x = county, y = somecollege)) +
   theme(axis.text.x = element_text(angle = 90))
 ```
 
+```{r}
+write_csv(edu, here("data", "edu.csv"))
+```
