@@ -20,9 +20,11 @@ library(patchwork)
 
 ```{r read data}
 unemployment_change <- fread(here("data", "unemployment-change.csv"))
+
 mobility_avg <- fread(here("data", "mobility-avg.csv")) %>%
   mutate(county = sub_region_2) %>%
   select(-sub_region_2)
+
 socioeconomic <- fread(here("data", "socioeconomic.csv")) %>%
   mutate(county = area_name) %>%
   select(-area_name)
@@ -38,8 +40,26 @@ merged_data <- unemployment_change %>%
   na.omit
 
 set.seed(0)
-sample_data <- sample_n(merged_data, 500)
+sample_data <- sample_n(merged_data, 500) %>%
+  rename(pct_some_college = percent_of_adults_completing_some_college_or_associate_s_degree_2014_18) %>%
+  rename(pct_bachelor_or_higher = percent_of_adults_with_a_bachelor_s_degree_or_higher_2014_18) %>%
+  rename(pct_only_hs = percent_of_adults_with_a_high_school_diploma_only_2014_18) %>%
+  rename(pct_less_hs = percent_of_adults_with_less_than_a_high_school_diploma_2014_18) %>%
+  select(county, unemployment_change, retail_avg, grocery_avg, workplaces_avg, residential_avg, 
+         medhhinc_2018, pct_bachelor_or_higher, pctpovall_2018, medhhinc_2018)
 ```
+
+```{r}
+glimpse(sample_data)
+```
+
+```{r clean}
+sample_data %>%
+  mutate()
+```
+
+some college pct
+
 
 ## Univariate analysis
 
@@ -154,12 +174,16 @@ merged_data %>%
 model <- lm(unemployment_change ~ retail_avg + 
               grocery_avg + 
               workplaces_avg + 
-              residential_avg, 
-            data = merged_data)
+              residential_avg + 
+         medhhinc_2018 + 
+           pct_bachelor_or_higher + 
+           pctpovall_2018 + 
+           medhhinc_2018, 
+            data = sample_data)
 ```
 
 ```{r backward selection}
-int_only_model <- lm(unemployment_change ~ 1, data = merged_data)
+int_only_model <- lm(unemployment_change ~ 1, data = sample_data)
 
 final_model <- step(model, scope = formula(int_only_model), direction = "backward")
 
