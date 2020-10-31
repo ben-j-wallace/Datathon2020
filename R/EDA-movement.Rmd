@@ -23,13 +23,26 @@ durham <- mobility %>%
   filter(sub_region_2 == "Durham County")
 
 durham %>%
+  head(50) %>%
   ggplot(aes(x = date, y = workplaces_percent_change_from_baseline)) +
-  geom_point()
-
-durham %>%
-  filter(date == "2020-09-11") %>%
-  select(workplaces_percent_change_from_baseline)
+  geom_point() +
+  theme_ipsum_rc() 
 ```
+
+```{r}
+nc_avg <- mobility %>%
+  filter(sub_region_1 == "North Carolina") %>%
+  group_by(sub_region_2, na.rm=TRUE) %>%
+  summarise(retail_avg = mean(retail_and_recreation_percent_change_from_baseline, na.rm=TRUE),
+            grocery_avg = mean(grocery_and_pharmacy_percent_change_from_baseline, na.rm=TRUE),
+            parks_avg = mean(parks_percent_change_from_baseline, na.rm=TRUE),
+            transit_avg = mean(transit_stations_percent_change_from_baseline, na.rm=TRUE),
+            workplaces_avg = mean(workplaces_percent_change_from_baseline, na.rm=TRUE),
+            residential_avg = mean(residential_percent_change_from_baseline, na.rm=TRUE))
+nc_avg
+
+```
+
 
 
 ```{r plot}
