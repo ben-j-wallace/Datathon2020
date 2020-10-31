@@ -20,7 +20,6 @@ library(rms)
 library(Sleuth3)
 ```
 
-
 ```{r read data}
 unemployment_change <- fread(here("data", "unemployment-change.csv"))
 mobility_avg <- fread(here("data", "mobility-avg.csv")) %>%
@@ -29,38 +28,167 @@ mobility_avg <- fread(here("data", "mobility-avg.csv")) %>%
 socioeconomic <- fread(here("data", "socioeconomic.csv")) %>%
   mutate(county = area_name) %>%
   select(-area_name)
-unemployment_change
 ```
 
 ## Merge data
 
 ```{r}
 merged_data <- unemployment_change %>%
-  inner_join(mobility_avg, by = "county") %>%
+  inner_join(mobility_avg, by = "county")
 ```
-
 
 ```{r}
-#inner_join(socioeconomic, by = "county")
-
 set.seed(0)
 sample_data <- sample_n(merged_data, 500)
-
-sample_data
 ```
+
+## Univariate analysis
 
 ```{r}
 ggplot(data = sample_data, mapping = aes(x = unemployment_change)) +
-  geom_bar()
+  geom_histogram()
 ```
 
-## EDA
+```{r}
+ggplot(data = sample_data, mapping = aes(x = retail_avg)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = sample_data, mapping = aes(x = grocery_avg)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = sample_data, mapping = aes(x = parks_avg)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = sample_data, mapping = aes(x = transit_avg)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = sample_data, mapping = aes(x = workplaces_avg)) +
+  geom_histogram()
+```
+
+```{r}
+ggplot(data = sample_data, mapping = aes(x = residential_avg)) +
+  geom_histogram()
+```
+
+```{r}
+merged_data %>% 
+  summarise(mean = mean(unemployment_change),
+          median = median(unemployment_change),
+          sd = sd(unemployment_change),
+          iqr = IQR(unemployment_change),
+          min = min(unemployment_change),
+          max = max(unemployment_change))
+```
+
+```{r}
+merged_data %>% 
+  filter(!is.na(retail_avg)) %>% 
+  summarise(mean = mean(retail_avg),
+          median = median(retail_avg),
+          sd = sd(retail_avg),
+          iqr = IQR(retail_avg),
+          min = min(retail_avg),
+          max = max(retail_avg))
+```
+
+```{r}
+merged_data %>% 
+  filter(!is.na(grocery_avg)) %>% 
+  summarise(mean = mean(grocery_avg),
+          median = median(grocery_avg),
+          sd = sd(grocery_avg),
+          iqr = IQR(grocery_avg),
+          min = min(grocery_avg),
+          max = max(grocery_avg))
+```
+
+```{r}
+merged_data %>% 
+  filter(!is.na(parks_avg)) %>% 
+  summarise(mean = mean(parks_avg),
+          median = median(parks_avg),
+          sd = sd(parks_avg),
+          iqr = IQR(parks_avg),
+          min = min(parks_avg),
+          max = max(parks_avg))
+```
+
+```{r}
+merged_data %>% 
+  filter(!is.na(transit_avg)) %>%
+  summarise(mean = mean(transit_avg),
+          median = median(transit_avg),
+          sd = sd(transit_avg),
+          iqr = IQR(transit_avg),
+          min = min(transit_avg),
+          max = max(transit_avg))
+```
+
+```{r}
+merged_data %>% 
+  filter(!is.na(workplaces_avg)) %>%
+  summarise(mean = mean(workplaces_avg),
+          median = median(workplaces_avg),
+          sd = sd(workplaces_avg),
+          iqr = IQR(workplaces_avg),
+          min = min(workplaces_avg),
+          max = max(workplaces_avg))
+```
+
+```{r}
+merged_data %>% 
+  filter(!is.na(residential_avg)) %>%
+  summarise(mean = mean(residential_avg),
+          median = median(residential_avg),
+          sd = sd(residential_avg),
+          iqr = IQR(residential_avg),
+          min = min(residential_avg),
+          max = max(residential_avg))
+```
+
+## Bivariate analysis
 
 ```{r}
 merged_data %>%
   ggplot(aes(y = unemployment_change, x = retail_avg)) +
   geom_point()
 ```
+
+```{r}
+merged_data %>%
+  ggplot(aes(y = unemployment_change, x = grocery_avg)) +
+  geom_point()
+```
+
+
+```{r}
+merged_data %>%
+  ggplot(aes(y = unemployment_change, x = parks_avg)) +
+  geom_point()
+```
+
+```{r}
+merged_data %>%
+  ggplot(aes(y = unemployment_change, x = workplaces_avg)) +
+  geom_point()
+```
+
+```{r}
+merged_data %>%
+  ggplot(aes(y = unemployment_change, x = residential_avg)) +
+  geom_point()
+```
+
+## Model
 
 ```{r}
 model <- lm(unemployment_change ~ retail_avg + 
@@ -74,6 +202,13 @@ model <- lm(unemployment_change ~ retail_avg +
 model %>%
   tidy(conf.int = TRUE) %>%
   kable(digits = 3)
+```
+
+```{r backward selection}
+int_only_model <- lm(unemployment_change ~ 1, data = merged_data)
+
+final_model <- step(model, scope = formula(int_only_model), direction = "backward")
+
 ```
 
 ## Questions
