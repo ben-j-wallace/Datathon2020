@@ -10,27 +10,60 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(tidyverse)
+library(here)
+library(broom)
+library(knitr)
 ```
 
 
 ```{r read data}
-unemployment <- read.csv("../data/Unemployment.csv")
-mobility <- read.csv("../data/US-Mobility-Report.csv")
-```
-
-## Merge data
-```{r}
-unemployment <- unemployment %>% 
-  mutate(county = sapply(strsplit("Autauga County, AL", ","), "[", 1))
-
-mobility <- mobility %>% 
+#unemployment <- read.csv("../data/Unemployment.csv")
+unemployment_change <- read_csv(here("data", "unemployment-change.csv"))
+mobility_avg <- read_csv(here("data", "mobility-avg.csv")) %>% 
   mutate(county = sub_region_2)
 ```
 
+## Merge data
+
 ```{r}
-merged_data <- inner_join(unemployment, mobility, 
+merged_data <- inner_join(unemployment_change, mobility_avg, 
                            by = "county")
+
+merged_data
 ```
+
+## EDA
+
+```{r}
+merged_data %>%
+  ggplot(aes(y = unemployment_change, x = retail_avg)) +
+  geom_point()
+```
+
+```{r}
+model <- lm(unemployment_change ~ retail_avg + 
+              grocery_avg + 
+              parks_avg + 
+              transit_avg + 
+              workplaces_avg + 
+              residential_avg, 
+            data = merged_data)
+
+model %>%
+  tidy %>%
+  kable(digits = 3)
+```
+
+
+
+## Old Merge Data
+
+
+```{r}
+#unemployment <- unemployment %>% 
+#  mutate(county = sapply(strsplit("Autauga County, AL", ","), "[", 1))
+```
+
 
 ## Questions
 - What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
