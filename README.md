@@ -1,6 +1,6 @@
 # Datathon2020
 
-### Team: <color> span style="color:blue"> Ben  <em>blue</em> text</span> Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu
+### Team: Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu
 
 ## Background
 
