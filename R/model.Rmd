@@ -1,6 +1,6 @@
 ---
-title: "Untitled"
-author: "Ben Wallace"
+title: "Model"
+author: "Ben Wallace, Lily Zhu"
 date: "10/31/2020"
 output: html_document
 ---
@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r read data}
 unemployment <- read.csv("../data/Unemployment.csv")
+mobility <- read.csv("../data/US-Mobility-Report.csv")
 ```
 
 ## Merge data
