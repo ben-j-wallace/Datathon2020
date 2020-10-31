@@ -6,7 +6,9 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE)
 ```
 
 ```{r load packages}
@@ -27,6 +29,8 @@ mobility <- mobility %>%
   mutate(date_num = as.Date(date))
 ```
 
+# Distribution plots
+
 ```{r}
 ggplot(data = mobility, mapping = aes(x = retail_and_recreation_percent_change_from_baseline)) +
   geom_bar()
@@ -46,6 +50,8 @@ ggplot(data = mobility, mapping = aes(x = workplaces_percent_change_from_baselin
 ggplot(data = mobility, mapping = aes(x = residential_percent_change_from_baseline)) +
   geom_bar()
 ```
+
+# Summary stats
 
 ```{r}
 mobility %>% 
@@ -113,6 +119,8 @@ mobility %>%
           max = max(residential_percent_change_from_baseline))
 ```
 
+# NY
+
 ```{r ny}
 ny_feb <- mobility %>%
   filter(sub_region_1 == "New York", date_num >= as.Date("2020-02-15"), date_num < as.Date("2020-03-01"))
@@ -156,6 +164,8 @@ ny_feb %>%
   theme(axis.text.x = element_text(angle = 90))
 ```
 
+# Durham
+
 ```{r durham eda, eval = FALSE}
 durham <- mobility %>%
   filter(sub_region_2 == "Durham County")
@@ -166,6 +176,8 @@ durham %>%
   geom_point() #+
   #theme_ipsum_rc() 
 ```
+
+# NC
 
 ```{r}
 nc_avg <- mobility %>%
@@ -180,8 +192,6 @@ nc_avg <- mobility %>%
 nc_avg
 
 ```
-
-
 
 ```{r plot}
 #test_plot <- ggplot(mtcars, aes(mpg, wt)) +
@@ -199,6 +209,4 @@ nc_avg
 
 # EDA 
 
-
 # Linear Regression Code
-
