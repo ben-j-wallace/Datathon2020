@@ -10,13 +10,13 @@
 
 ## Components
 
--`data` **folder**
+### `data` **folder**
   - Description: includes .csv and other data files used in data analysis
   - Files:
-- `r` **folder**
+### `r` **folder**
   - Description: includes .rmd and other .r files
   - Files
-- `output` **folder**
+### `output` **folder**
   - Description: includes .pdf knitting and other visualizations
   - Files:
   
