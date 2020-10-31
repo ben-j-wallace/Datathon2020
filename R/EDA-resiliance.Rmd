@@ -12,9 +12,25 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, include=FALSE}
 library(tidyverse)
 library(hrbrthemes)
+library(here)
+```
+
+```{r, include=FALSE}
+resilience <- read_csv(here("data", "community-resilience-estimates.csv"))
 ```
 
 ```{r}
-resiliance <- read_csv("data/community-resilience-estimates.csv")
+head(resilience)
+```
+
+```{r}
+totals <- resilience %>%
+  group_by(ctname, rfgrp) %>%
+  summarise(sum = sum(prednum)) %>%
+  pivot_wider(names_from = ctname, values_from = sum)
+```
+
+```{r}
+
 ```
 
