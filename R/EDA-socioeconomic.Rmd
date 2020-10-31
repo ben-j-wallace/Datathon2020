@@ -44,7 +44,28 @@ combined <- merge(combined,unemployment,by="Area_name")
 combined
 ```
 
+
+```{r}
+education_recent <- read.csv(here("data", "Education_recent.csv"))
+pop_estimates_recent <- read.csv(here("data", "PopulationEstimates_recent.csv")) %>%
+  rename(Area_name = Area_Name)
+poverty_estimates_recent <- read.csv(here("data", "PovertyEstimates_recent.csv"))
+unemployment_recent <- read.csv(here("data", "Unemployment_recent.csv")) %>%
+  mutate(Area_name = str_extract(Area_name, "[^,]+"))
+```
+
+```{r}
+combined_recent <- merge(education_recent,pop_estimates_recent,by="Area_name")
+combined_recent <- merge(combined_recent,poverty_estimates_recent,by="Area_name")
+combined_recent <- merge(combined_recent,unemployment_recent,by="Area_name")
+combined_recent
+```
+
+```{r}
+
+```
+
+
 ```{r}
 write_csv(combined, here("data", "combined_big.csv"))
 ```
-

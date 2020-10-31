@@ -25,9 +25,15 @@ mobility_avg <- read_csv("../data/mobility-avg.csv")
 
 mobility <- mobility %>% 
   mutate(county = sub_region_2)
+big <- read_csv(here("data","combined_big.csv"))
 ```
 
 ## Merge data
+
+
+merged_data <- unemployment_change %>%
+  inner_join(mobility_avg, by = "county") %>%
+  inner_join(big, by = c("county" = "Area_name"))
 
 ```{r}
 unemployment <- unemployment %>% 
@@ -60,7 +66,7 @@ model <- lm(unemployment_change ~ retail_avg +
             data = merged_data_2)
 
 model %>%
-  tidy %>%
+  tidy(conf.int = TRUE) %>%
   kable(digits = 3)
 ```
 
