@@ -109,21 +109,26 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{head}\NormalTok{(resilience)}
+\NormalTok{resilience <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\KeywordTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"community-resilience-estimates.csv"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## # A tibble: 6 x 12
-##   state county tract rfgrp prednum prednum_moe predrt predrt_moe stname STABREV
-##   <chr> <chr>  <chr> <chr>   <dbl>       <dbl>  <dbl>      <dbl> <chr>  <chr>  
-## 1 01    001    0000~ 0RF     17545       4023.   31.7       7.26 Alaba~ AL     
-## 2 01    001    0000~ 1-2RF   24796       4320.   44.7       7.8  Alaba~ AL     
-## 3 01    001    0000~ 3PLRF   13079       3607.   23.6       6.51 Alaba~ AL     
-## 4 01    001    0201~ 0RF       495        171.   25.8       8.89 Alaba~ AL     
-## 5 01    001    0201~ 1-2RF     902        189.   47.0       9.82 Alaba~ AL     
-## 6 01    001    0201~ 3PLRF     524        163    27.3       8.49 Alaba~ AL     
-## # ... with 2 more variables: ctname <chr>, popuni <dbl>
+## Parsed with column specification:
+## cols(
+##   state = col_character(),
+##   county = col_character(),
+##   tract = col_character(),
+##   rfgrp = col_character(),
+##   prednum = col_double(),
+##   prednum_moe = col_double(),
+##   predrt = col_double(),
+##   predrt_moe = col_double(),
+##   stname = col_character(),
+##   STABREV = col_character(),
+##   ctname = col_character(),
+##   popuni = col_double()
+## )
 \end{verbatim}
 
 \begin{Shaded}

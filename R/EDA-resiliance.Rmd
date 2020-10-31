@@ -2,7 +2,7 @@
 title: "EDA_resiliance"
 author: "Ben Wallace"
 date: "10/31/2020"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -18,13 +18,10 @@ library(splitstackshape)
 library(dplyr)
 ```
 
-```{r, include=FALSE}
+```{r}
 resilience <- read_csv(here("data", "community-resilience-estimates.csv"))
 ```
 
-```{r}
-head(resilience)
-```
 
 ```{r}
 totals <- resilience %>%
@@ -33,9 +30,6 @@ totals <- resilience %>%
   pivot_wider(names_from = ctname, values_from = sum)
 ```
 
-```{r}
-
-```
 
 ```{r}
 # setDT(resilience)
