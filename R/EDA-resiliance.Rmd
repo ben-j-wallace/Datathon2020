@@ -12,9 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, include=FALSE}
 library(tidyverse)
 library(hrbrthemes)
+library(here)
 ```
 
 ```{r}
-resiliance <- read_csv("data/community-resilience-estimates.csv")
+resilience <- read_csv(here("data", "community-resilience-estimates.csv"))
 ```
 
