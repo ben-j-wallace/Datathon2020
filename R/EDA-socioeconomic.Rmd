@@ -33,12 +33,18 @@ poverty_estimates <- read.csv(here("data", "PovertyEstimates.csv")) %>%
 
 unemployment <- read.csv(here("data", "Unemployment.csv")) %>%
   rename(State = Stabr, Area_name = area_name) %>%
-  filter(State == "NC")
+  filter(State == "NC") %>%
+  mutate(Area_name = str_extract(Area_name, "[^,]+"))
 ```
 
 ```{r}
 combined <- merge(education,pop_estimates,by="Area_name")
 combined <- merge(combined,poverty_estimates,by="Area_name")
 combined <- merge(combined,unemployment,by="Area_name")
+combined
+```
+
+```{r}
+
 ```
 
