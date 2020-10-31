@@ -131,19 +131,19 @@ sample_data %>%
 ```
 
 ```{r}
-merged_data %>%
+sample_data %>%
   ggplot(aes(y = unemployment_change, x = grocery_avg)) +
   geom_point()
 ```
 
 ```{r}
-merged_data %>%
+sample_data %>%
   ggplot(aes(y = unemployment_change, x = workplaces_avg)) +
   geom_point()
 ```
 
 ```{r}
-merged_data %>%
+sample_data %>%
   ggplot(aes(y = unemployment_change, x = residential_avg)) +
   geom_point()
 ```
@@ -155,11 +155,11 @@ model <- lm(unemployment_change ~ retail_avg +
               grocery_avg + 
               workplaces_avg + 
               residential_avg, 
-            data = merged_data)
+            data = sample_data)
 ```
 
 ```{r backward selection}
-int_only_model <- lm(unemployment_change ~ 1, data = merged_data)
+int_only_model <- lm(unemployment_change ~ 1, data = sample_data)
 
 final_model <- step(model, scope = formula(int_only_model), direction = "backward")
 
@@ -174,17 +174,9 @@ model_aug <- augment(final_model)
 model_aug %>%
   ggplot(aes(x = .fitted, y = .resid)) +
   geom_point() +
+  geom_hline(yintercept = 0, color = "red") +
   theme_grey(base_size = 14) +
   labs(x = "Fitted", y = "Residual", title = "Residuals Show No Pattern")
-```
-
-```{r cooks distance}
-ggplot(model_aug, aes(x = obs_num, y = .cooksd)) +
-  geom_point(alpha = 0.7) +
-  geom_hline(yintercept = c(0.5, 1), color = "red") +
-  labs(x = "Observation Number", y= "Cook's D") +
-  geom_text(aes(label=ifelse(.hat > 0.5,
-  as.character(obs_num), "")), nudge_x = 1)
 ```
 
 ```{r conditions}
@@ -207,6 +199,74 @@ resid_qq <- ggplot(data = model_aug, aes(sample = .resid)) +
 resid_fitted / (resid_hist + resid_qq)
 ```
 
+## Model Diagnostics
+
+**Leverage**
+
+```{r leverage threshold}
+#calculate threshold
+leverage_threshold <- 2*(3+1)/500
+leverage_threshold
+```
+
+```{r leverage v obs num}
+model_augmented <- augment(final_model) %>%
+   mutate(obs_num = row_number()) #add row number to help with graphing
+
+ggplot(data = model_augmented, aes(x = obs_num, y = .hat)) + 
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = leverage_threshold, color = "red") +
+  labs(x = "Observation Number", y = "Leverage") +
+  geom_text(aes(label=ifelse(.hat > leverage_threshold,
+                             as.character(obs_num), "")), nudge_x = 4)
+```
+
+```{r obs w high leverage}
+model_augmented %>% 
+  filter(.hat > leverage_threshold)
+```
+
+**Standardized residuals**
+
+```{r std resid}
+#scatterplot of std resid vs predicted
+ggplot(data = model_augmented, aes(x = obs_num, y = .std.resid)) + 
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 0, color = "red") +
+  geom_hline(linetype = "dotted", yintercept = c(-2,2)) +
+  geom_hline(linetype = "dotted", yintercept = c(-3,3), color = "red") +
+  labs(x = "Observation Number", y = "Standardized Residuals") +
+  geom_text(aes(label=ifelse(.std.resid > 3,
+                             as.character(obs_num), "")), nudge_x = 4)
+```
+
+```{r potential outliers}
+model_augmented %>% 
+  filter(abs(.std.resid) > 3)
+```
+
+**Cook's distance**
+
+```{r cooks d}
+#scatterplot of cook's d vs obs num
+ggplot(data = model_augmented, aes(x = obs_num, y = .cooksd)) + 
+  geom_point(alpha = 0.7) + 
+  geom_hline(yintercept = 1, color = "red") +
+  geom_hline(linetype = "dotted", yintercept = 0.5, color = "red") +
+  labs(x = "Observation Number", y = "Cook's D") +
+  geom_text(aes(label=ifelse(.cooksd > 1,
+                             as.character(obs_num), "")), nudge_x = 4)
+```
+
+**Multicollinearity**
+
+```{r check multicollinearity}
+vif(final_model) %>%
+  tidy() %>%
+  kable(digits = 3)
+```
+
+All of the predictor variables have a VIF less than 10. Thus, we can say that none of the predictor variables in our model are correlated.
 
 ## Questions
 - What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
