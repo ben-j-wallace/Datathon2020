@@ -1,0 +1,34 @@
+---
+title: "Untitled"
+author: "Ben Wallace"
+date: "10/31/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Questions
+- What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
+- Given the relationship between these variables, what is the expected unemployment rate of North Carolina counties?
+
+## Predictors:
+- resilience:
+-
+## Response:
+- unemployment rate:
+
+## EDA:
+
+See .rmd files in folder.
+
+## Model: We will use a multiple linear regression model with the following form:
+
+> unemployment rate = resilience + __ + __ + __ + __
+
+#### Output:
+
+
+
