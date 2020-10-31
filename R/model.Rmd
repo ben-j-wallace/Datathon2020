@@ -1,6 +1,5 @@
----
-title: "Unemployment Model"
-author: "Ben Wallace"
+title: "Model"
+author: "Ben Wallace, Lily Zhu"
 date: "10/31/2020"
 output: html_document
 ---
