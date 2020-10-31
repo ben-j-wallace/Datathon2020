@@ -1,3 +1,4 @@
+---
 title: "Model"
 author: "Ben Wallace, Lily Zhu"
 date: "10/31/2020"
@@ -21,7 +22,7 @@ mobility <- read.csv("../data/US-Mobility-Report.csv")
 ## Merge data
 ```{r}
 unemployment <- unemployment %>% 
-  mutate(county = sapply(strsplit("Autauga County, AL", ","), "[", 1))
+  mutate(county = sapply(strsplit(area_name, ","), "[", 1))
 
 mobility <- mobility %>% 
   mutate(county = sub_region_2)
