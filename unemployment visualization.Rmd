@@ -1,0 +1,46 @@
+---
+title: "Untitled"
+author: "Ben Wallace"
+date: "10/31/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(here)
+library(lubridate)
+library(hrbrthemes)
+```
+
+
+```{r read data}
+mobility <- read.csv(here("data","unemployment-data.csv")) 
+```
+
+```{r find average unemployment}
+feb_mobility <- mobility %>%
+  filter(year == 20, month != "Jan") %>%
+  mutate(unemployment_rate = as.numeric(unemployment_rate)) %>%
+  filter(month == "Feb") 
+
+aug_mobility <- mobility %>%
+  filter(year == 20, month != "Jan") %>%
+  mutate(unemployment_rate = as.numeric(unemployment_rate)) %>%
+  filter(month == "Aug") 
+
+change_feb_aug <- feb_mobility %>%
+  inner_join(aug_mobility, by = "county") %>%
+  select(county, state.x, unemployment_rate.x, unemployment_rate.y) %>%
+  mutate(unemployment_change = unemployment_rate.y - unemployment_rate.x) %>%
+  select(-unemployment_rate.x, -unemployment_rate.y) %>%
+  distinct(county, .keep_all= TRUE) 
+```
+
+```{r}
+ggplot
+```
+
