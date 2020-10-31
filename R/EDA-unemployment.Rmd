@@ -22,7 +22,6 @@ mobility <- read.csv(here("data","unemployment-data.csv")) %>%
   mutate(year = str_sub(period, -2, -1)) %>%
   select(-county_name_state_abbreviation)
 
-
 mobility
 
 ```
@@ -30,22 +29,26 @@ mobility
 ```{r find average unemployment}
 feb_mobility <- mobility %>%
   filter(year == 20, month != "Jan") %>%
-  filter(state == "NC") %>%
   mutate(unemployment_rate = as.numeric(unemployment_rate)) %>%
   filter(month == "Feb") 
 
 aug_mobility <- mobility %>%
   filter(year == 20, month != "Jan") %>%
-  filter(state == "NC") %>%
   mutate(unemployment_rate = as.numeric(unemployment_rate)) %>%
   filter(month == "Aug") 
 
 change_feb_aug <- feb_mobility %>%
-  left_join(aug_mobility, by = "county", keep = FALSE) %>%
-  select(county, unemployment_rate.x, unemployment_rate.y) %>%
+  inner_join(aug_mobility, by = "county") %>%
+  select(county, state.x, unemployment_rate.x, unemployment_rate.y) %>%
   mutate(unemployment_change = unemployment_rate.y - unemployment_rate.x) %>%
-  select(-unemployment_rate.x, -unemployment_rate.y)
+  select(-unemployment_rate.x, -unemployment_rate.y) %>%
+  distinct(county, .keep_all= TRUE) 
 
+change_feb_aug
+```
+
+```{r}
 write_csv(change_feb_aug, file = here("data","unemployment-change.csv"))
+
 ```
 

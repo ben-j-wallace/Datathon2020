@@ -16,6 +16,7 @@ library(tidyverse)
 library(lubridate)
 library(ggplot2)
 library(here)
+library(janitor)
 ```
 
 ```{r}
@@ -55,14 +56,16 @@ unemployment_recent <- read.csv(here("data", "Unemployment_recent.csv")) %>%
 ```
 
 ```{r}
-combined_recent <- merge(education_recent,pop_estimates_recent,by="Area_name")
-combined_recent <- merge(combined_recent,poverty_estimates_recent,by="Area_name")
-combined_recent <- merge(combined_recent,unemployment_recent,by="Area_name")
-combined_recent
+combined_recent <- inner_join(education_recent,pop_estimates_recent,by="Area_name")
+combined_recent <- inner_join(combined_recent,poverty_estimates_recent,by="Area_name")
+combined_recent <- inner_join(combined_recent,unemployment_recent,by="Area_name")
+combined_recent <- combined_recent %>%
+  distinct(Area_name, .keep_all= TRUE) %>%
+  clean_names
 ```
 
 ```{r}
-
+write_csv(combined_recent, here("data", "socioeconomic.csv"))
 ```
 
 
