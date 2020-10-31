@@ -16,6 +16,9 @@ library(broom)
 library(knitr)
 library(data.table)
 library(patchwork)
+library(skimr)
+library(readr)
+library(rms)
 ```
 
 ```{r read data}
@@ -197,20 +200,28 @@ final_model %>%
   kable(digits = 3)
 ```
 
-<<<<<<< HEAD
-=======
 ```{r}
 model_aug <- augment(final_model) 
-
-model_aug %>%
-  ggplot(aes(x = .fitted, y = .resid)) +
-  geom_point() +
-  geom_hline(yintercept = 0, color = "red") +
-  theme_grey(base_size = 14) +
-  labs(x = "Fitted", y = "Residual", title = "Residuals Show No Pattern")
 ```
 
+
+## Interaction Term
+
+```{r nested F-test}
+reduced_model <- final_model
+full_model <- lm(unemployment_change ~ retail_avg + grocery_avg + workplaces_avg + retail_avg*grocery_avg, data = sample_data)
+
+anova(reduced_model, full_model) %>%
+  tidy() %>%
+  kable(digits = 3)
+```
+
+## Model Conditions
+
 ```{r conditions}
+model_aug <- augment(full_model) %>%
+   mutate(obs_num = row_number()) #add row number to help with graphing
+
 resid_fitted <- ggplot(data = model_aug, aes(x = .fitted, y = .resid)) +
   geom_point() +
   geom_hline(yintercept = 0, color = "red") +
@@ -241,10 +252,7 @@ leverage_threshold
 ```
 
 ```{r leverage v obs num}
-model_augmented <- augment(final_model) %>%
-   mutate(obs_num = row_number()) #add row number to help with graphing
-
-ggplot(data = model_augmented, aes(x = obs_num, y = .hat)) + 
+ggplot(data = model_aug, aes(x = obs_num, y = .hat)) + 
   geom_point(alpha = 0.7) + 
   geom_hline(yintercept = leverage_threshold, color = "red") +
   labs(x = "Observation Number", y = "Leverage") +
@@ -253,7 +261,7 @@ ggplot(data = model_augmented, aes(x = obs_num, y = .hat)) +
 ```
 
 ```{r obs w high leverage}
-model_augmented %>% 
+model_aug %>% 
   filter(.hat > leverage_threshold)
 ```
 
@@ -261,7 +269,7 @@ model_augmented %>%
 
 ```{r std resid}
 #scatterplot of std resid vs predicted
-ggplot(data = model_augmented, aes(x = obs_num, y = .std.resid)) + 
+ggplot(data = model_aug, aes(x = obs_num, y = .std.resid)) + 
   geom_point(alpha = 0.7) + 
   geom_hline(yintercept = 0, color = "red") +
   geom_hline(linetype = "dotted", yintercept = c(-2,2)) +
@@ -272,7 +280,7 @@ ggplot(data = model_augmented, aes(x = obs_num, y = .std.resid)) +
 ```
 
 ```{r potential outliers}
-model_augmented %>% 
+model_aug %>% 
   filter(abs(.std.resid) > 3)
 ```
 
@@ -280,7 +288,7 @@ model_augmented %>%
 
 ```{r cooks d}
 #scatterplot of cook's d vs obs num
-ggplot(data = model_augmented, aes(x = obs_num, y = .cooksd)) + 
+ggplot(data = model_aug, aes(x = obs_num, y = .cooksd)) + 
   geom_point(alpha = 0.7) + 
   geom_hline(yintercept = 1, color = "red") +
   geom_hline(linetype = "dotted", yintercept = 0.5, color = "red") +
@@ -292,7 +300,7 @@ ggplot(data = model_augmented, aes(x = obs_num, y = .cooksd)) +
 **Multicollinearity**
 
 ```{r check multicollinearity}
-vif(final_model) %>%
+vif(full_model) %>%
   tidy() %>%
   kable(digits = 3)
 ```
