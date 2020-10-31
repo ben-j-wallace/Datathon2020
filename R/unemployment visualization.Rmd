@@ -1,32 +1,24 @@
 ---
-title: "EDA-unemployment"
-author: "Albert Sun"
+title: "Untitled"
+author: "Ben Wallace"
 date: "10/31/2020"
 output: html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
 ```{r, include=FALSE}
 library(tidyverse)
-library(tidyselect)
 library(here)
-library(janitor)
 library(lubridate)
 library(hrbrthemes)
 ```
 
 
 ```{r read data}
-mobility <- read.csv(here("data","unemployment-data.csv")) %>%
-  clean_names %>%
-  select(-i_laus_code) %>%
-  mutate(state = str_sub(county_name_state_abbreviation, -2, -1)) %>%
-  mutate(county = str_sub(county_name_state_abbreviation, 0, -5)) %>%
-  mutate(month = str_sub(period, 0, 3)) %>%
-  mutate(year = str_sub(period, -2, -1)) %>%
-  select(-county_name_state_abbreviation)
-
-mobility
-
+mobility <- read.csv(here("data","unemployment-data.csv")) 
 ```
 
 ```{r find average unemployment}
@@ -46,12 +38,9 @@ change_feb_aug <- feb_mobility %>%
   mutate(unemployment_change = unemployment_rate.y - unemployment_rate.x) %>%
   select(-unemployment_rate.x, -unemployment_rate.y) %>%
   distinct(county, .keep_all= TRUE) 
-
-change_feb_aug
 ```
 
 ```{r}
-write_csv(change_feb_aug, file = here("data","unemployment-change.csv"))
-
+ggplot
 ```
 
