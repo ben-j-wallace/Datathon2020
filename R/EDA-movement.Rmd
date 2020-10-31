@@ -14,6 +14,24 @@ library(tidyverse)
 library(hrbrthemes)
 ```
 
+```{r}
+mobility <- read.csv("../data/US-Mobility-Report.csv")
+```
+
+```{r}
+durham <- mobility %>%
+  filter(sub_region_2 == "Durham County")
+
+durham %>%
+  ggplot(aes(x = date, y = workplaces_percent_change_from_baseline)) +
+  geom_point()
+
+durham %>%
+  filter(date == "2020-09-11") %>%
+  select(workplaces_percent_change_from_baseline)
+```
+
+
 ```{r plot}
 test_plot <- ggplot(mtcars, aes(mpg, wt)) +
   geom_point() +
