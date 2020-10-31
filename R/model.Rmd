@@ -64,24 +64,13 @@ model %>%
   kable(digits = 3)
 ```
 
-
-
-## Old Merge Data
-
-
-```{r}
-#unemployment <- unemployment %>% 
-#  mutate(county = sapply(strsplit("Autauga County, AL", ","), "[", 1))
-```
-
-
 ## Questions
 - What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
 - Given the relationship between these variables, what is the expected unemployment rate of North Carolina counties?
 
 ## Predictors:
 - resilience:
--
+
 ## Response:
 - unemployment rate:
 
