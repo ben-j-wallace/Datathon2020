@@ -15,7 +15,22 @@ library(hrbrthemes)
 library(here)
 ```
 
-```{r}
+```{r, include=FALSE}
 resilience <- read_csv(here("data", "community-resilience-estimates.csv"))
+```
+
+```{r}
+head(resilience)
+```
+
+```{r}
+totals <- resilience %>%
+  group_by(ctname, rfgrp) %>%
+  summarise(sum = sum(prednum)) %>%
+  pivot_wider(names_from = ctname, values_from = sum)
+```
+
+```{r}
+
 ```
 
