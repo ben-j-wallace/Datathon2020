@@ -15,9 +15,6 @@ library(here)
 library(broom)
 library(knitr)
 library(data.table)
-library(leaps)
-library(rms)
-library(Sleuth3)
 ```
 
 
@@ -37,10 +34,12 @@ unemployment_change
 ```{r}
 merged_data <- unemployment_change %>%
   inner_join(mobility_avg, by = "county") %>%
-  inner_join(socioeconomic, by = "county")
+  inner_join(socioeconomic, by = "county") %>%
+  select(-parks_avg, -transit_avg) %>%
+  na.omit
 
 set.seed(0)
-sample_data <- sample_n(merged_data, 500)
+sample_data <- sample_n(merged_data, 500) 
 
 sample_data
 ```
@@ -49,7 +48,7 @@ sample_data
 ## EDA
 
 ```{r}
-merged_data %>%
+sample_data %>%
   ggplot(aes(y = unemployment_change, x = retail_avg)) +
   geom_point()
 ```
@@ -76,7 +75,24 @@ See .rmd files in folder.
 #### Output:
 
 ```{r}
-full_model <- lm(unemployment_change ~ .,data = sample_data)
+
+sample_data <- sample_data %>%
+  mutate(some_college_or_associate_s_degree_2014_18 = as.numeric(some_college_or_associate_s_degree_2014_18))
+
+full_model <- lm(unemployment_change ~ 
+                   retail_avg +
+                 grocery_avg + 
+                   workplaces_avg + 
+                   residential_avg, 
+                 data = sample_data)
+
+int_only_model <- lm(unemployment_change ~ 1, data = sample_data, na.action = na.omit)
+
+aic_model <- step(full_model, scope = formula(int_only_model), direction = "backward")
+
+aic_model %>%
+  tidy(conf.int = 3) %>%
+  kable(digits = 3)
 
 # model_aic <- step(full_model, direction = "backward")
 ```
