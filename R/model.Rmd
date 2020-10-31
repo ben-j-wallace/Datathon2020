@@ -15,6 +15,9 @@ library(here)
 library(broom)
 library(knitr)
 library(data.table)
+library(leaps)
+library(rms)
+library(Sleuth3)
 ```
 
 
@@ -51,19 +54,6 @@ merged_data %>%
   geom_point()
 ```
 
-```{r}
-model <- lm(unemployment_change ~ retail_avg + 
-              grocery_avg + 
-              parks_avg + 
-              transit_avg + 
-              workplaces_avg + 
-              residential_avg, 
-            data = merged_data_2)
-
-model %>%
-  tidy(conf.int = TRUE) %>%
-  kable(digits = 3)
-```
 
 ## Questions
 - What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
@@ -85,5 +75,10 @@ See .rmd files in folder.
 
 #### Output:
 
+```{r}
+full_model <- lm(unemployment_change ~ .,data = sample_data)
+
+# model_aic <- step(full_model, direction = "backward")
+```
 
 
