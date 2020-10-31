@@ -9,6 +9,23 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r read data}
+unemployment <- read.csv("../data/Unemployment.csv")
+```
+
+## Merge data
+```{r}
+unemployment <- unemployment %>% 
+  mutate(county = sapply(strsplit("Autauga County, AL", ","), "[", 1))
+
+mobility <- mobility %>% 
+  mutate(county = sub_region_2)
+```
+
+```{r}
+merged_data <- inner_join(unemployment, mobility, 
+                           by = "county")
+```
 
 ## Questions
 - What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
