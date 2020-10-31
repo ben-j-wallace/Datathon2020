@@ -1,6 +1,6 @@
 # Datathon2020
 
-### Team: Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu (team bAESIAN statistics)
+### Team bAESIAN statistics: Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu 
 
 ## Background
 
