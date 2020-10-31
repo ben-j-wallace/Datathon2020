@@ -127,3 +127,23 @@ aic_model %>%
 ```
 
 
+```{r}
+sample_data <- sample_data %>%
+  rename(somecollege = percent_of_adults_completing_some_college_or_associate_s_degree_2014_18) %>%
+  arrange(desc(somecollege))
+
+p1 <- sample_data %>%
+  slice(1:1) %>%
+  ggplot(aes(x = reorder(county, -somecollege), y = somecollege)) +
+  geom_bar(stat = "identity")
+
+p1
+
+p2 <- sample_data %>%
+  slice(485:500) %>%
+  ggplot(aes(x = reorder(county, -somecollege), y = somecollege)) +
+  geom_bar(stat = "identity")
+
+p2
+```
+
