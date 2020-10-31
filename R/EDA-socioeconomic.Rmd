@@ -45,6 +45,6 @@ combined
 ```
 
 ```{r}
-
+write_csv(combined, here("data", "combined_big.csv"))
 ```
 
