@@ -1,0 +1,46 @@
+---
+title: "Unemployment model"
+author: "Lily Zhu"
+date: "10/31/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(here)
+library(broom)
+library(knitr)
+```
+
+```{r read data}
+unemployment_change <- read_csv("../data/unemployment-change.csv")
+mobility <- read_csv("../data/US-Mobility-Report.csv")
+
+mobility <- mobility %>% 
+  mutate(county = sub_region_2)
+
+#unemployment <- unemployment %>% 
+  #mutate(county = sapply(strsplit(area_name, ","), "[", 1))
+
+merged_data <- inner_join(unemployment_change, mobility, by = "county") %>% 
+  distinct(county, .keep_all = TRUE)
+```
+
+```{r}
+ggplot(data = merged_data, mapping = aes(x = unemployment_change)) +
+  geom_histogram()
+```
+
+```{r}
+merged_data %>% 
+  group_by(sub_region_1) %>% 
+  ggplot(mapping = aes(x = unemployment_change)) +
+  geom_histogram()
+```
+
