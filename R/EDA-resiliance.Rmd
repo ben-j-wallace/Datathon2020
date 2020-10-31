@@ -13,6 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(hrbrthemes)
 library(here)
+library(data.table)
+library(splitstackshape)
+library(dplyr)
 ```
 
 ```{r, include=FALSE}
@@ -32,5 +35,35 @@ totals <- resilience %>%
 
 ```{r}
 
+```
+
+```{r}
+# setDT(resilience)
+# res <- dcast(resilience, ctname + stname + popuni ~ 
+#        rowid(ctname), value.var  = c("prednum", "predrt"), sep='')
+
+test <- resilience %>%
+  filter(stname == "North Carolina") %>%
+  select(ctname, stname, popuni, prednum, predrt) %>%
+  group_by(ctname, stname, popuni) %>%
+  summarise_all(funs(paste((.), collapse = ",")))
+
+test <- cSplit(test, c("prednum", "predrt"), ",")
+```
+
+```{r}
+dat <- resilience %>%
+  mutate_if(is.factor, as.character) %>%
+  filter(stname == "North Carolina") %>%
+  select(ctname, stname, popuni, prednum, predrt) %>%
+  group_by(ctname) %>%
+  mutate(ID = 1:n()) %>%
+  gather(Info, Value, starts_with("pred")) %>%
+  unite(New_Col, Info, ID, sep = "") %>%
+  spread(New_Col, Value) %>%
+  select(c("ctname", "stname", "popuni",
+           paste0(rep(c("prednum", "predrt"), 3), rep(1:3, each = 2)))) %>%
+  ungroup()
+dat
 ```
 
