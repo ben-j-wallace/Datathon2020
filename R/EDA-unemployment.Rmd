@@ -1,0 +1,51 @@
+---
+title: "EDA-unemployment"
+author: "Albert Sun"
+date: "10/31/2020"
+output: html_document
+---
+
+```{r}
+library(here)
+library(janitor)
+library(lubridate)
+```
+
+
+```{r read data}
+mobility <- read.csv(here("data","unemployment-data.csv")) %>%
+  clean_names %>%
+  select(-i_laus_code) %>%
+  mutate(state = str_sub(county_name_state_abbreviation, -2, -1)) %>%
+  mutate(county = str_sub(county_name_state_abbreviation, 0, -5)) %>%
+  mutate(month = str_sub(period, 0, 3)) %>%
+  mutate(year = str_sub(period, -2, -1)) %>%
+  select(-county_name_state_abbreviation)
+
+
+mobility
+
+```
+
+```{r find average unemployment}
+feb_mobility <- mobility %>%
+  filter(year == 20, month != "Jan") %>%
+  filter(state == "NC") %>%
+  mutate(unemployment_rate = as.numeric(unemployment_rate)) %>%
+  filter(month == "Feb") 
+
+aug_mobility <- mobility %>%
+  filter(year == 20, month != "Jan") %>%
+  filter(state == "NC") %>%
+  mutate(unemployment_rate = as.numeric(unemployment_rate)) %>%
+  filter(month == "Aug") 
+
+change_feb_aug <- feb_mobility %>%
+  left_join(aug_mobility, by = "county", keep = FALSE) %>%
+  select(county, unemployment_rate.x, unemployment_rate.y) %>%
+  mutate(unemployment_change = unemployment_rate.y - unemployment_rate.x) %>%
+  select(-unemployment_rate.x, -unemployment_rate.y)
+
+write_csv(change_feb_aug, file = here("data","unemployment-change.csv"))
+```
+
