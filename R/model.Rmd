@@ -15,9 +15,6 @@ library(here)
 library(broom)
 library(knitr)
 library(data.table)
-library(leaps)
-library(rms)
-library(Sleuth3)
 ```
 
 ```{r read data}
@@ -34,10 +31,10 @@ socioeconomic <- fread(here("data", "socioeconomic.csv")) %>%
 
 ```{r}
 merged_data <- unemployment_change %>%
-  inner_join(mobility_avg, by = "county")
-```
+  inner_join(mobility_avg, socioeconomic, by = "county") %>%
+  select(-parks_avg, -transit_avg) %>%
+  na.omit
 
-```{r}
 set.seed(0)
 sample_data <- sample_n(merged_data, 500)
 ```
@@ -158,7 +155,7 @@ merged_data %>%
 ## Bivariate analysis
 
 ```{r}
-merged_data %>%
+sample_data %>%
   ggplot(aes(y = unemployment_change, x = retail_avg)) +
   geom_point()
 ```
@@ -211,6 +208,14 @@ final_model <- step(model, scope = formula(int_only_model), direction = "backwar
 
 ```
 
+```{r}
+augment(model) %>%
+  ggplot(aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  theme_grey(base_size = 14) +
+  labs(x = "Fitted", y = "Residual", title = "Residuals Show No Pattern")
+```
+
 ## Questions
 - What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
 - Given the relationship between these variables, what is the expected unemployment rate of North Carolina counties?
@@ -232,9 +237,46 @@ See .rmd files in folder.
 #### Output:
 
 ```{r}
-full_model <- lm(unemployment_change ~ .,data = sample_data)
+
+sample_data <- sample_data %>%
+  mutate(some_college_or_associate_s_degree_2014_18 = as.numeric(some_college_or_associate_s_degree_2014_18))
+
+full_model <- lm(unemployment_change ~ 
+                   retail_avg +
+                 grocery_avg + 
+                   workplaces_avg + 
+                   residential_avg, 
+                 data = sample_data)
+
+int_only_model <- lm(unemployment_change ~ 1, data = sample_data, na.action = na.omit)
+
+aic_model <- step(full_model, scope = formula(int_only_model), direction = "backward")
+
+aic_model %>%
+  tidy(conf.int = 3) %>%
+  kable(digits = 3)
 
 # model_aic <- step(full_model, direction = "backward")
 ```
 
+
+```{r}
+sample_data <- sample_data %>%
+  rename(somecollege = percent_of_adults_completing_some_college_or_associate_s_degree_2014_18) %>%
+  arrange(desc(somecollege))
+
+p1 <- sample_data %>%
+  slice(1:1) %>%
+  ggplot(aes(x = reorder(county, -somecollege), y = somecollege)) +
+  geom_bar(stat = "identity")
+
+p1
+
+p2 <- sample_data %>%
+  slice(485:500) %>%
+  ggplot(aes(x = reorder(county, -somecollege), y = somecollege)) +
+  geom_bar(stat = "identity")
+
+p2
+```
 
