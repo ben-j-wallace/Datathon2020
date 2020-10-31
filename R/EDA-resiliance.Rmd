@@ -9,3 +9,12 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r, include=FALSE}
+library(tidyverse)
+library(hrbrthemes)
+```
+
+```{r}
+resiliance <- read_csv("data/community-resilience-estimates.csv")
+```
+
