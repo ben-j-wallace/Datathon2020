@@ -1,3 +1,4 @@
+---
 title: "Model"
 author: "Ben Wallace, Lily Zhu"
 date: "10/31/2020"
@@ -17,9 +18,12 @@ library(knitr)
 
 
 ```{r read data}
-#unemployment <- read.csv("../data/Unemployment.csv")
+unemployment <- read_csv("../data/Unemployment.csv")
 unemployment_change <- read_csv(here("data", "unemployment-change.csv"))
-mobility_avg <- read_csv(here("data", "mobility-avg.csv")) %>% 
+mobility <- read_csv("../data/US-Mobility-Report.csv")
+mobility_avg <- read_csv("../data/mobility-avg.csv")
+
+mobility <- mobility %>% 
   mutate(county = sub_region_2)
 big <- read_csv(here("data","combined_big.csv"))
 ```
@@ -27,18 +31,27 @@ big <- read_csv(here("data","combined_big.csv"))
 ## Merge data
 
 
-```{r}
 merged_data <- unemployment_change %>%
   inner_join(mobility_avg, by = "county") %>%
   inner_join(big, by = c("county" = "Area_name"))
 
-merged_data
+```{r}
+unemployment <- unemployment %>% 
+  mutate(county = sapply(strsplit(area_name, ","), "[", 1))
+
+merged_data <- inner_join(unemployment, mobility, by = "county")
+```
+
+
+```{r}
+merged_data_2 <- inner_join(unemployment_change, mobility_avg, 
+                           by = "county")
 ```
 
 ## EDA
 
 ```{r}
-merged_data %>%
+merged_data_2 %>%
   ggplot(aes(y = unemployment_change, x = retail_avg)) +
   geom_point()
 ```
@@ -50,7 +63,7 @@ model <- lm(unemployment_change ~ retail_avg +
               transit_avg + 
               workplaces_avg + 
               residential_avg, 
-            data = merged_data)
+            data = merged_data_2)
 
 model %>%
   tidy(conf.int = TRUE) %>%
