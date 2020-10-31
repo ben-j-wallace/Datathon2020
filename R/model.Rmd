@@ -10,25 +10,38 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## Questions
+### Questions
 - What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
 - Given the relationship between these variables, what is the expected unemployment rate of North Carolina counties?
 
-## Predictors:
+### Predictors:
 - resilience:
 -
-## Response:
+### Response:
 - unemployment rate:
 
-## EDA:
+### EDA:
 
 See .rmd files in folder.
 
-## Model: We will use a multiple linear regression model with the following form:
+#### Conclusions from EDA:
+
+### Model: 
+
+We will use a multiple linear regression model with the following form:
 
 > unemployment rate = resilience + __ + __ + __ + __
+
+### Model Selection
+
+Using Akaike's Information Criterion (AIC)
+
+```{r}
+### Insert code for AIC here
+```
 
 #### Output:
 
 
+##
 
