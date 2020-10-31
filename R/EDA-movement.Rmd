@@ -11,6 +11,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r load packages}
 library(tidyverse)
+library(lubridate)
+library(ggplot2)
+library(dygraphs)
+library(plotly)
 #library(hrbrthemes)
 ```
 
@@ -21,6 +25,92 @@ mobility <- read.csv("../data/US-Mobility-Report.csv")
 ```{r date num}
 mobility <- mobility %>% 
   mutate(date_num = as.Date(date))
+```
+
+```{r}
+ggplot(data = mobility, mapping = aes(x = retail_and_recreation_percent_change_from_baseline)) +
+  geom_bar()
+
+ggplot(data = mobility, mapping = aes(x = grocery_and_pharmacy_percent_change_from_baseline)) +
+  geom_bar()
+
+ggplot(data = mobility, mapping = aes(x = parks_percent_change_from_baseline)) +
+  geom_bar()
+
+ggplot(data = mobility, mapping = aes(x = transit_stations_percent_change_from_baseline)) +
+  geom_bar()
+
+ggplot(data = mobility, mapping = aes(x = workplaces_percent_change_from_baseline)) +
+  geom_bar()
+
+ggplot(data = mobility, mapping = aes(x = residential_percent_change_from_baseline)) +
+  geom_bar()
+```
+
+```{r}
+mobility %>% 
+  filter(!is.na(retail_and_recreation_percent_change_from_baseline)) %>% 
+  summarise(mean = mean(retail_and_recreation_percent_change_from_baseline),
+          median = median(retail_and_recreation_percent_change_from_baseline),
+          sd = sd(retail_and_recreation_percent_change_from_baseline),
+          iqr = IQR(retail_and_recreation_percent_change_from_baseline),
+          min = min(retail_and_recreation_percent_change_from_baseline),
+          max = max(retail_and_recreation_percent_change_from_baseline))
+```
+
+```{r}
+mobility %>% 
+  filter(!is.na(grocery_and_pharmacy_percent_change_from_baseline)) %>% 
+  summarise(mean = mean(grocery_and_pharmacy_percent_change_from_baseline),
+          median = median(grocery_and_pharmacy_percent_change_from_baseline),
+          sd = sd(grocery_and_pharmacy_percent_change_from_baseline),
+          iqr = IQR(grocery_and_pharmacy_percent_change_from_baseline),
+          min = min(grocery_and_pharmacy_percent_change_from_baseline),
+          max = max(grocery_and_pharmacy_percent_change_from_baseline))
+```
+
+```{r}
+mobility %>% 
+  filter(!is.na(parks_percent_change_from_baseline)) %>% 
+  summarise(mean = mean(parks_percent_change_from_baseline),
+          median = median(parks_percent_change_from_baseline),
+          sd = sd(parks_percent_change_from_baseline),
+          iqr = IQR(parks_percent_change_from_baseline),
+          min = min(parks_percent_change_from_baseline),
+          max = max(parks_percent_change_from_baseline))
+```
+
+```{r}
+mobility %>% 
+  filter(!is.na(transit_stations_percent_change_from_baseline)) %>% 
+  summarise(mean = mean(transit_stations_percent_change_from_baseline),
+          median = median(transit_stations_percent_change_from_baseline),
+          sd = sd(transit_stations_percent_change_from_baseline),
+          iqr = IQR(transit_stations_percent_change_from_baseline),
+          min = min(transit_stations_percent_change_from_baseline),
+          max = max(transit_stations_percent_change_from_baseline))
+```
+
+```{r}
+mobility %>% 
+  filter(!is.na(workplaces_percent_change_from_baseline)) %>% 
+  summarise(mean = mean(workplaces_percent_change_from_baseline),
+          median = median(workplaces_percent_change_from_baseline),
+          sd = sd(workplaces_percent_change_from_baseline),
+          iqr = IQR(workplaces_percent_change_from_baseline),
+          min = min(workplaces_percent_change_from_baseline),
+          max = max(workplaces_percent_change_from_baseline))
+```
+
+```{r}
+mobility %>% 
+  filter(!is.na(residential_percent_change_from_baseline)) %>% 
+  summarise(mean = mean(residential_percent_change_from_baseline),
+          median = median(residential_percent_change_from_baseline),
+          sd = sd(residential_percent_change_from_baseline),
+          iqr = IQR(residential_percent_change_from_baseline),
+          min = min(residential_percent_change_from_baseline),
+          max = max(residential_percent_change_from_baseline))
 ```
 
 ```{r ny}
@@ -66,15 +156,15 @@ ny_feb %>%
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-```{r durham eda}
+```{r durham eda, eval = FALSE}
 durham <- mobility %>%
   filter(sub_region_2 == "Durham County")
 
 durham %>%
   head(50) %>%
   ggplot(aes(x = date, y = workplaces_percent_change_from_baseline)) +
-  geom_point() +
-  theme_ipsum_rc() 
+  geom_point() #+
+  #theme_ipsum_rc() 
 ```
 
 ```{r}
