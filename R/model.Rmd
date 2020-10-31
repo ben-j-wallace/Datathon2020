@@ -31,7 +31,8 @@ socioeconomic <- fread(here("data", "socioeconomic.csv")) %>%
 
 ```{r}
 merged_data <- unemployment_change %>%
-  inner_join(mobility_avg, socioeconomic, by = "county") %>%
+  inner_join(mobility_avg, by = "county") %>%
+  inner_join(socioeconomic, by = "county") %>%
   select(-parks_avg, -transit_avg) %>%
   na.omit
 
