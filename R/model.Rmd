@@ -16,6 +16,7 @@ library(broom)
 library(knitr)
 library(data.table)
 library(patchwork)
+library(hrbrthemes)
 ```
 
 ```{r read data}
@@ -214,19 +215,42 @@ resid_fitted <- ggplot(data = model_aug, aes(x = .fitted, y = .resid)) +
   geom_hline(yintercept = 0, color = "red") +
   labs(x = "Predicted values",
     y = "Residual",
-    title = "Residuals vs. Predicted")
+    title = "Residuals vs. Predicted") +
+  theme_ipsum_rc()
 
 resid_hist <- ggplot(data = model_aug, aes(x = .resid)) +
-  geom_histogram() +
-  labs(x = "Residuals", title = "Dist. of Residuals")
+  geom_histogram(binwidth = 1) +
+  labs(x = "Residuals", title = "Dist. of Residuals") +
+  theme_ipsum_rc()
 
 resid_qq <- ggplot(data = model_aug, aes(sample = .resid)) +
   stat_qq() +
   stat_qq_line() +
-  labs(title = "Normal QQ-plot of residuals")
+  labs(title = "Normal QQ-plot of residuals") +
+  theme_ipsum_rc()
 
-resid_fitted / (resid_hist + resid_qq)
+conditions_plot <- resid_fitted / (resid_hist + resid_qq)
 ```
+
+```{r save file}
+ggsave(here("output", "test-plot.png"), conditions_plot, units = "in", width = 850/100, height = 600/100)
+```
+
+```{r}
+#test_plot <- ggplot(mtcars, aes(mpg, wt)) +
+  #geom_point() +
+  #labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
+       #title="Seminal ggplot2 scatterplot example",
+       #subtitle="A plot that is only useful for demonstration purposes",
+       #caption="Brought to you by the letter 'g'") +
+  #theme_ipsum_rc()
+```
+
+```{r save file}
+#ggsave("../output/test-plot.png", test_plot, units = "in", width = 850/100, height = 600/100 )
+```
+
+
 
 ## Model Diagnostics
 
