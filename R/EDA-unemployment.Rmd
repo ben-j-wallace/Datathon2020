@@ -50,6 +50,43 @@ change_feb_aug <- feb_mobility %>%
 change_feb_aug
 ```
 
+```{r unemployment time plot}
+mobility <- mobility %>%
+  slice(1:45066)
+
+mobility <- mobility %>%
+  filter(year == 20) %>%
+  mutate(unemployed = as.numeric(gsub(",", "", unemployed))) %>%
+  mutate(labor_force = as.numeric(gsub(",", "", labor_force)))
+
+mobility2 <- mobility %>%
+  select(labor_force, unemployed, month) %>%
+  na.omit()
+
+totals <- mobility2 %>%
+  group_by(month) %>%
+  summarise(labor = sum(labor_force),
+            unemployed = sum(unemployed)) %>%
+  mutate(pct = unemployed / labor * 100)
+  
+months <- c("Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug")
+
+totals <- totals %>%
+  mutate(month =  factor(month, levels = months)) %>%
+  arrange(month) %>%
+  slice(1:7)
+```
+
+
+```{r}
+ggplot(data = totals, aes(x = month, y = pct, group = 1)) +
+       geom_line(color = "navy") +
+  geom_point() +
+  labs(x = "Month", y = "Unemployment Rate", title = "Slow Economic Recovery Since the Spring") +
+  theme_ipsum_rc()
+```
+
+
 ```{r}
 write_csv(change_feb_aug, file = here("data","unemployment-change.csv"))
 
