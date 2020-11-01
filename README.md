@@ -1,6 +1,8 @@
 # Datathon2020
 
-### Team Baesian statistics: Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu 
+### Team Baesian Statistics: Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu 
+
+### Title: _‘I like to move it, move it’_: The Effects of post-COVID Mobility on Unemployment
 
 ## Background
 
@@ -22,11 +24,11 @@ Our lives have changed drastically since the onset of the COVID-19 pandemic, and
 
 ## Methodolgy
 
-- We selected 7 variables we believed to be likely predictors of unemployment_change: `retail_avg`, `grocery_avg` , `workplaces_avg`, `residential_avg` , `medhhinc_2018`, `pct_bachelor_or_higher`, and `pctpovall_2018`.
++ We selected 7 variables we believed to be likely predictors of unemployment_change: `retail_avg`, `grocery_avg` , `workplaces_avg`, `residential_avg` , `medhhinc_2018`, `pct_bachelor_or_higher`, and `pctpovall_2018`.
 
-- Through **backwards selection**, we found retail_avg, grocery_avg, and workplaces_avg to be significant predictors  (p < 0.05).  All else held constant, for each 1% increase in retail_avg, grocery_avg, or workplaces_avg, the unemployment rate is predicted to decrease by 0.073, 0.015, and 0.035, respectively.
++ Through **backwards selection**, we found retail_avg, grocery_avg, and workplaces_avg to be significant predictors  (p < 0.05).  All else held constant, for each 1% increase in retail_avg, grocery_avg, or workplaces_avg, the unemployment rate is predicted to decrease by 0.073, 0.015, and 0.035, respectively.
 
-- Through a **nested F-test**, we found the interaction term between retail_avg and grocery_avg to be significant, meaning the effect of retail_avg on the unemployment rate depends on grocery_avg.
++ Through a **nested F-test**, we found the interaction term between retail_avg and grocery_avg to be significant, meaning the effect of retail_avg on the unemployment rate depends on grocery_avg.
 
 ## Components
 
