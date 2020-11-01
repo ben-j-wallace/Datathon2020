@@ -392,12 +392,14 @@ Based on our current output, we can see that both geographical and societal fact
 
 ```{r}
 broom::augment(x=final_model, newdata = merged_data, type.predict = "response") %>%
-  arrange(-.fitted) 
+  arrange(-.fitted) %>% 
+  select(.fitted, everything())
 
 broom::augment(x=final_model, newdata = merged_data, type.predict = "response") %>%
-  arrange(.fitted) 
+  arrange(.fitted) %>% 
+  select(.fitted,)
 ```
 
-Our model predicts these counties to have the top unemployment rate increases: New York County (+8.7%), Arlington County (+6.9%), Santa Clara County (+6.8%), Kauai County (+6.5%), Maui County (+6.5%).
+Our model predicts these counties to have the largest unemployment rate increases: New York County (+8.7%), Arlington County (+6.9%), Santa Clara County (+6.8%), Kauai County (+6.5%), Maui County (+6.5%).
 
-Our model predicts these counties to have the smallest unemployment rate decreases: Cape May County (-3.3%), Dare County (-3.1%), Door County (-2.5%), Le Sueur County (-0.9%), Taney County (-0.9%).
+Our model predicts these counties to have the largest unemployment rate decreases: Cape May County (-3.3%), Dare County (-3.1%), Door County (-2.5%), Le Sueur County (-0.9%), Taney County (-0.9%).
