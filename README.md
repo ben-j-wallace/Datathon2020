@@ -32,11 +32,10 @@ Our lives have changed drastically since the onset of the COVID-19 pandemic, and
 
 ### `data` **folder**
   - Description: includes .csv and other data files used in data analysis
-  - Files:
+
 ### `r` **folder**
   - Description: includes .rmd and other .r files
-  - Files
+  
 ### `output` **folder**
   - Description: includes .pdf knitting and other visualizations
-  - Files:
   
