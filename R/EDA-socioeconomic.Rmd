@@ -20,44 +20,44 @@ library(janitor)
 ```
 
 ```{r}
-education <- read.csv(here("data", "Education.csv")) %>%
-  filter(State == "NC") %>%
-  rename(Area_name = Area.name)
-
-pop_estimates <- read.csv(here("data", "PopulationEstimates.csv")) %>%
-  filter(State == "NC") %>%
-  rename(Area_name = Area_Name)
-
-poverty_estimates <- read.csv(here("data", "PovertyEstimates.csv")) %>%
-  rename(State = Stabr) %>%
-  filter(State == "NC")
-
-unemployment <- read.csv(here("data", "Unemployment.csv")) %>%
-  rename(State = Stabr, Area_name = area_name) %>%
-  filter(State == "NC") %>%
-  mutate(Area_name = str_extract(Area_name, "[^,]+"))
+# education <- read.csv(here("data", "Education.csv")) %>%
+#   filter(State == "NC") %>%
+#   rename(Area_name = Area.name)
+# 
+# pop_estimates <- read.csv(here("data", "PopulationEstimates.csv")) %>%
+#   filter(State == "NC") %>%
+#   rename(Area_name = Area_Name)
+# 
+# poverty_estimates <- read.csv(here("data", "PovertyEstimates.csv")) %>%
+#   rename(State = Stabr) %>%
+#   filter(State == "NC")
+# 
+# unemployment <- read.csv(here("data", "Unemployment.csv")) %>%
+#   rename(State = Stabr, Area_name = area_name) %>%
+#   filter(State == "NC") %>%
+#   mutate(Area_name = str_extract(Area_name, "[^,]+"))
 ```
 
 ```{r}
-combined <- merge(education,pop_estimates,by="Area_name")
-combined <- merge(combined,poverty_estimates,by="Area_name")
-combined <- merge(combined,unemployment,by="Area_name")
-combined
+# combined <- merge(education,pop_estimates,by="Area_name")
+# combined <- merge(education,poverty_estimates,by="Area_name")
+# combined <- merge(combined,unemployment,by="Area_name")
+# combined
 ```
 
 
 ```{r}
 education_recent <- read.csv(here("data", "Education_recent.csv"))
-pop_estimates_recent <- read.csv(here("data", "PopulationEstimates_recent.csv")) %>%
-  rename(Area_name = Area_Name)
+# pop_estimates_recent <- read.csv(here("data", "PopulationEstimates_recent.csv")) %>%
+#   rename(Area_name = Area_Name)
 poverty_estimates_recent <- read.csv(here("data", "PovertyEstimates_recent.csv"))
 unemployment_recent <- read.csv(here("data", "Unemployment_recent.csv")) %>%
   mutate(Area_name = str_extract(Area_name, "[^,]+"))
 ```
 
 ```{r}
-combined_recent <- inner_join(education_recent,pop_estimates_recent,by="Area_name")
-combined_recent <- inner_join(combined_recent,poverty_estimates_recent,by="Area_name")
+# combined_recent <- inner_join(education_recent,pop_estimates_recent,by="Area_name")
+combined_recent <- inner_join(education_recent,poverty_estimates_recent,by="Area_name")
 combined_recent <- inner_join(combined_recent,unemployment_recent,by="Area_name")
 combined_recent <- combined_recent %>%
   distinct(Area_name, .keep_all= TRUE) %>%
