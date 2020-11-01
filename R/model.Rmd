@@ -2,7 +2,9 @@
 title: "Model"
 author: "Ben Wallace, Lily Zhu"
 date: "10/31/2020"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -302,25 +304,71 @@ vif(full_model) %>%
 
 All of the predictor variables have a VIF less than 10. Thus, we can say that none of the predictor variables in our model are correlated.
 
-## Questions
-- What is the relationship between ___ and ___? What does this say about the future of unemployment during the future of this pandemic, which experts believe will continue into the next years?
-- Given the relationship between these variables, what is the expected unemployment rate of North Carolina counties?
+## Full model with interaction term
 
-## Predictors:
-- resilience:
+$$unemployment\_change = 1.266 - 0.73\times{retail\_avg} - 0.015\times{grocery\_avg} -0.035\times{workplaces\_avg} + 0.002\times{retail\_avg:grocery\_avg}$$
 
-## Response:
-- unemployment rate:
+```{r}
+tidy(full_model, conf.int = TRUE) %>% 
+  kable(digits = 3)
+```
 
-## EDA:
+## Model comparison
 
-See .rmd files in folder.
+```{r}
+tidy(final_model) %>% 
+  kable(digits = 3)
+```
 
-## Model: We will use a multiple linear regression model with the following form:
+```{r}
+glance(final_model) %>% 
+  select(AIC,BIC,r.squared,adj.r.squared)
+```
 
-> unemployment rate = resilience + __ + __ + __ + __
+```{r}
+tidy(full_model) %>% 
+  kable(digits = 3)
+``` 
 
-#### Output:
+```{r}
+glance(full_model) %>%
+  select(AIC,BIC,r.squared,adj.r.squared)
+```
 
+```{r}
+model2 <- lm(unemployment_change ~ retail_avg*grocery_avg, data = sample_data)
+tidy(model2, conf.int = TRUE) %>% 
+  kable(digits = 3)
+```
 
+```{r}
+glance(model2) %>% 
+  select(AIC,BIC,r.squared,adj.r.squared)
+```
 
+## Interpretation (Edit)
+
+```{r}
+tidy(full_model) %>% 
+  kable(digits = 3)
+``` 
+
+The p-values for `retail_avg`, `grocery_avg`, `workplaces_avg`, and `retail_avg:grocery_avg` are all less than a significance level of $\alpha = 0.05$ and have 95% confidence intervals that do not include 0. Therefore, we can conclude that they are significant predictors when predicting the median property value of owner-occupied homes in thousands of dollars for towns located in the suburbs of Boston. In addition, the interaction term between the mean-centered proportion of non-retail business acres per town and the tract house bounds river is also significant based on the p-value and confidence interval.
+
+The intercept is 28.454. This means that the expected median property value of owner-occupied homes for towns located in the suburbs of Boston with `r round(mean(real_estate$CRIM))` crime rate per capita, no residential land zoned for lots over 25,000 sq.ft, `r round(mean(real_estate$INDUS))`, does not bound river, with `r round(mean(real_estate$RM))` number of rooms per dwelling on average, no owner-occupied units built prior to 1940, `r round(mean(real_estate$DIS))` as weighted distance to five Boston employment centers, and pupil-teacher ratio of `r round(mean(real_estate$PTRATIO))` is around 28454 dollars.
+
+The estimated coefficient for `indus_cent` is -0.358. This means that for every one percentage point increase in the proportion of non-retail business acres per town, the mean of the median property value of owner-occupied homes for each town is expected to decrease by 358 dollars, holding all other predictor variables constant.
+
+The estimated coefficient for `CHAS1` is 7.485. This means that if a town bounds the Charles River, then the median property value of owner-occupied homes in thousands of dollars for each town is expected to be 7485 dollars higher than the town that does not bound the Charles River, holding all other predictor variables constant.
+
+The estimated coefficient for `rm_cent` is 5.788. This means that for every additional room in the average number of rooms per dwelling, the mean of the median property value of owner-occupied homes for each town is expected to increase by 5788 dollars, holding all other predictor variables constant.
+
+The estimated coefficient for `AGE` is -0.097. This means that for every one percentage point increase in the proportion of owner-occupied units built prior to 1940, the mean of the median property value of owner-occupied homes for each town is expected to decrease by 97 dollars, holding all other predictor variables constant.
+
+The estimated coefficient for `dis_cent` is -1.778. This means that for every one additional mile in the weighted distances to five Boston employment centers, the mean of the median property value of owner-occupied homes for each town is expected to decrease by 1778 dollars, holding all other predictor variables constant.
+
+The estimated coefficient for `ptratio_cent` is -0.599. This means that for every one percentage point increase in pupil-teacher ratio, the mean of the median property value of owner-occupied homes for each town is expected to decrease by 599 dollars, holding all other predictor variables constant.
+
+The estimated coefficient for `indus_cent:CHAS1` is 0.936. This means that for every one percentage point increase in the proportion of non-retail business acres per town, the median property value of owner-occupied homes for each town is expected to increase by 936 dollars, on average, for towns the bound the Charles River than towns that do not bound the Charles River, holding all other predictor variables constant.
+
+Based on our current output, we can see that both geographical and societal factors influence the property values in Boston suburbs. In particular, factors that indicate better environment and number of rooms in a house have a positive linear relationship with the property values in Boston suburbs. On the other hand, proportion of non-retail business, proportion of old buildings, distances to employment centers, and pupil-teacher ratio have negative linear relationships with the property values in Boston suburbs. This is roughly in line with what we expected since characteristics that indicate limited access to resources (e.g., high student-to-teacher ratio andd low average number of rooms per home) tend to have have lower median property values of owner-occupied homes.

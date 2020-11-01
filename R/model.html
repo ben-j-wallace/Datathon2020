@@ -371,9 +371,11 @@ summary {
 
 
 <pre class="r"><code>unemployment_change &lt;- fread(here(&quot;data&quot;, &quot;unemployment-change.csv&quot;))
+
 mobility_avg &lt;- fread(here(&quot;data&quot;, &quot;mobility-avg.csv&quot;)) %&gt;%
   mutate(county = sub_region_2) %&gt;%
   select(-sub_region_2)
+
 socioeconomic &lt;- fread(here(&quot;data&quot;, &quot;socioeconomic.csv&quot;)) %&gt;%
   mutate(county = area_name) %&gt;%
   select(-area_name)</code></pre>
@@ -386,7 +388,65 @@ socioeconomic &lt;- fread(here(&quot;data&quot;, &quot;socioeconomic.csv&quot;))
   na.omit
 
 set.seed(0)
-sample_data &lt;- sample_n(merged_data, 500)</code></pre>
+sample_data &lt;- sample_n(merged_data, 500) %&gt;%
+  rename(pct_some_college = percent_of_adults_completing_some_college_or_associate_s_degree_2014_18) %&gt;%
+  rename(pct_bachelor_or_higher = percent_of_adults_with_a_bachelor_s_degree_or_higher_2014_18) %&gt;%
+  rename(pct_only_hs = percent_of_adults_with_a_high_school_diploma_only_2014_18) %&gt;%
+  rename(pct_less_hs = percent_of_adults_with_less_than_a_high_school_diploma_2014_18) %&gt;%
+  select(county, unemployment_change, retail_avg, grocery_avg, workplaces_avg, residential_avg, 
+         medhhinc_2018, pct_bachelor_or_higher, pctpovall_2018, medhhinc_2018) %&gt;%
+  mutate(medhhinc_2018 = as.numeric(gsub(&quot;,&quot;, &quot;&quot;, medhhinc_2018)))</code></pre>
+<pre class="r"><code>glimpse(sample_data)</code></pre>
+<pre><code>## Rows: 500
+## Columns: 9
+## $ county                 &lt;chr&gt; &quot;Oconto County&quot;, &quot;Cayuga County&quot;, &quot;Napa County…
+## $ unemployment_change    &lt;dbl&gt; -0.2, 3.9, 4.8, 3.8, 4.4, -0.4, 0.7, 4.3, 2.7,…
+## $ retail_avg             &lt;dbl&gt; -18.843137, -11.467391, -28.348485, -8.137566,…
+## $ grocery_avg            &lt;dbl&gt; 0.9607843, 5.9836957, -10.6894737, -1.8913043,…
+## $ workplaces_avg         &lt;dbl&gt; -18.78804, -23.12887, -31.77835, -22.22165, -2…
+## $ residential_avg        &lt;dbl&gt; 5.4897959, 8.2546584, 10.3489583, 8.1250000, 7…
+## $ medhhinc_2018          &lt;dbl&gt; 59983, 52945, 85624, 53559, 42909, 50941, 4211…
+## $ pct_bachelor_or_higher &lt;dbl&gt; 16.0, 22.3, 34.9, 14.9, 12.7, 20.7, 15.6, 40.1…
+## $ pctpovall_2018         &lt;dbl&gt; 9.2, 13.0, 8.8, 17.3, 24.1, 12.0, 24.6, 6.4, 1…</code></pre>
+<pre class="r"><code>sample_data %&gt;%
+  mutate()</code></pre>
+<pre><code>##                   county unemployment_change retail_avg grocery_avg
+##   1:       Oconto County                -0.2 -18.843137   0.9607843
+##   2:       Cayuga County                 3.9 -11.467391   5.9836957
+##   3:         Napa County                 4.8 -28.348485 -10.6894737
+##   4: San Patricio County                 3.8  -8.137566  -1.8913043
+##   5:       Iberia Parish                 4.4  -3.005435   5.5706522
+##  ---                                                               
+## 496:         Polk County                 1.8  -6.327261   6.0765306
+## 497: Queen Anne&#39;s County                 2.0  -6.157609   3.0706522
+## 498:     Monterey County                -1.1 -26.949495   0.3181818
+## 499:   Greenville County                 3.2 -15.909091   1.3888889
+## 500:        Huron County                 2.0  -8.094862   8.5063830
+##      workplaces_avg residential_avg medhhinc_2018 pct_bachelor_or_higher
+##   1:      -18.78804        5.489796         59983                   16.0
+##   2:      -23.12887        8.254658         52945                   22.3
+##   3:      -31.77835       10.348958         85624                   34.9
+##   4:      -22.22165        8.125000         53559                   14.9
+##   5:      -20.11340        7.218310         42909                   12.7
+##  ---                                                                    
+## 496:      -22.78673        7.400654         39048                   13.3
+## 497:      -25.79688       12.197080         93751                   34.9
+## 498:      -27.13636        8.080808         69665                   24.5
+## 499:      -26.99495        8.398990         61162                   34.2
+## 500:      -21.38095        5.213483         45817                   15.5
+##      pctpovall_2018
+##   1:            9.2
+##   2:           13.0
+##   3:            8.8
+##   4:           17.3
+##   5:           24.1
+##  ---               
+## 496:           20.0
+## 497:            6.5
+## 498:           13.3
+## 499:           11.1
+## 500:           12.6</code></pre>
+<p>some college pct</p>
 </div>
 <div id="univariate-analysis" class="section level2">
 <h2>Univariate analysis</h2>
@@ -484,21 +544,156 @@ sample_data &lt;- sample_n(merged_data, 500)</code></pre>
 <pre class="r"><code>model &lt;- lm(unemployment_change ~ retail_avg + 
               grocery_avg + 
               workplaces_avg + 
-              residential_avg, 
-            data = sample_data)</code></pre>
+              residential_avg + 
+              medhhinc_2018 + 
+              pct_bachelor_or_higher + 
+              pctpovall_2018 + 
+              medhhinc_2018, 
+            data = sample_data)
+
+model %&gt;%
+  tidy(conf.int = TRUE) %&gt;%
+  kable(digits = 3)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">term</th>
+<th align="right">estimate</th>
+<th align="right">std.error</th>
+<th align="right">statistic</th>
+<th align="right">p.value</th>
+<th align="right">conf.low</th>
+<th align="right">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">0.239</td>
+<td align="right">0.958</td>
+<td align="right">0.250</td>
+<td align="right">0.803</td>
+<td align="right">-1.643</td>
+<td align="right">2.122</td>
+</tr>
+<tr class="even">
+<td align="left">retail_avg</td>
+<td align="right">-0.062</td>
+<td align="right">0.013</td>
+<td align="right">-4.667</td>
+<td align="right">0.000</td>
+<td align="right">-0.088</td>
+<td align="right">-0.036</td>
+</tr>
+<tr class="odd">
+<td align="left">grocery_avg</td>
+<td align="right">-0.025</td>
+<td align="right">0.014</td>
+<td align="right">-1.754</td>
+<td align="right">0.080</td>
+<td align="right">-0.054</td>
+<td align="right">0.003</td>
+</tr>
+<tr class="even">
+<td align="left">workplaces_avg</td>
+<td align="right">-0.045</td>
+<td align="right">0.029</td>
+<td align="right">-1.551</td>
+<td align="right">0.122</td>
+<td align="right">-0.102</td>
+<td align="right">0.012</td>
+</tr>
+<tr class="odd">
+<td align="left">residential_avg</td>
+<td align="right">0.016</td>
+<td align="right">0.032</td>
+<td align="right">0.502</td>
+<td align="right">0.616</td>
+<td align="right">-0.047</td>
+<td align="right">0.080</td>
+</tr>
+<tr class="even">
+<td align="left">medhhinc_2018</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+<td align="right">0.182</td>
+<td align="right">0.856</td>
+<td align="right">0.000</td>
+<td align="right">0.000</td>
+</tr>
+<tr class="odd">
+<td align="left">pct_bachelor_or_higher</td>
+<td align="right">0.012</td>
+<td align="right">0.013</td>
+<td align="right">0.938</td>
+<td align="right">0.349</td>
+<td align="right">-0.014</td>
+<td align="right">0.038</td>
+</tr>
+<tr class="even">
+<td align="left">pctpovall_2018</td>
+<td align="right">0.030</td>
+<td align="right">0.027</td>
+<td align="right">1.102</td>
+<td align="right">0.271</td>
+<td align="right">-0.024</td>
+<td align="right">0.084</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code>int_only_model &lt;- lm(unemployment_change ~ 1, data = sample_data)
 
 final_model &lt;- step(model, scope = formula(int_only_model), direction = &quot;backward&quot;)</code></pre>
-<pre><code>## Start:  AIC=604.92
+<pre><code>## Start:  AIC=608.59
 ## unemployment_change ~ retail_avg + grocery_avg + workplaces_avg + 
-##     residential_avg
+##     residential_avg + medhhinc_2018 + pct_bachelor_or_higher + 
+##     pctpovall_2018 + medhhinc_2018
 ## 
-##                   Df Sum of Sq    RSS    AIC
-## - residential_avg  1     0.853 1644.1 603.18
-## &lt;none&gt;                         1643.3 604.92
-## - grocery_avg      1    10.098 1653.4 605.99
-## - workplaces_avg   1    16.156 1659.4 607.81
-## - retail_avg       1    79.289 1722.6 626.48
+##                          Df Sum of Sq    RSS    AIC
+## - medhhinc_2018           1     0.110 1635.7 606.62
+## - residential_avg         1     0.838 1636.5 606.84
+## - pct_bachelor_or_higher  1     2.923 1638.6 607.48
+## - pctpovall_2018          1     4.038 1639.7 607.82
+## &lt;none&gt;                                1635.6 608.59
+## - workplaces_avg          1     7.999 1643.6 609.03
+## - grocery_avg             1    10.223 1645.9 609.70
+## - retail_avg              1    72.394 1708.0 628.24
+## 
+## Step:  AIC=606.62
+## unemployment_change ~ retail_avg + grocery_avg + workplaces_avg + 
+##     residential_avg + pct_bachelor_or_higher + pctpovall_2018
+## 
+##                          Df Sum of Sq    RSS    AIC
+## - residential_avg         1     1.022 1636.8 604.93
+## - pct_bachelor_or_higher  1     4.166 1639.9 605.89
+## &lt;none&gt;                                1635.7 606.62
+## - pctpovall_2018          1     6.744 1642.5 606.68
+## - workplaces_avg          1     8.462 1644.2 607.20
+## - grocery_avg             1    10.434 1646.2 607.80
+## - retail_avg              1    72.342 1708.1 626.26
+## 
+## Step:  AIC=604.93
+## unemployment_change ~ retail_avg + grocery_avg + workplaces_avg + 
+##     pct_bachelor_or_higher + pctpovall_2018
+## 
+##                          Df Sum of Sq    RSS    AIC
+## - pct_bachelor_or_higher  1     4.190 1641.0 604.21
+## - pctpovall_2018          1     6.523 1643.3 604.92
+## &lt;none&gt;                                1636.8 604.93
+## - grocery_avg             1    10.543 1647.3 606.14
+## - workplaces_avg          1    11.916 1648.7 606.56
+## - retail_avg              1    78.728 1715.5 626.42
+## 
+## Step:  AIC=604.21
+## unemployment_change ~ retail_avg + grocery_avg + workplaces_avg + 
+##     pctpovall_2018
+## 
+##                  Df Sum of Sq    RSS    AIC
+## - pctpovall_2018  1     3.183 1644.1 603.18
+## &lt;none&gt;                        1641.0 604.21
+## - grocery_avg     1    10.072 1651.0 605.27
+## - workplaces_avg  1    26.528 1667.5 610.23
+## - retail_avg      1    79.571 1720.5 625.89
 ## 
 ## Step:  AIC=603.18
 ## unemployment_change ~ retail_avg + grocery_avg + workplaces_avg
@@ -732,6 +927,72 @@ ggplot(data = model_aug, aes(x = obs_num, y = .cooksd)) +
 </tbody>
 </table>
 <p>All of the predictor variables have a VIF less than 10. Thus, we can say that none of the predictor variables in our model are correlated.</p>
+</div>
+<div id="full-model" class="section level2">
+<h2>Full model</h2>
+<p><span class="math display">\[  unemployment\_change = 1.266 - 0.73\times{retail_avg} -0.015 \]</span></p>
+<pre class="r"><code>tidy(full_model, conf.int = TRUE) %&gt;% 
+  kable(digits = 3)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">term</th>
+<th align="right">estimate</th>
+<th align="right">std.error</th>
+<th align="right">statistic</th>
+<th align="right">p.value</th>
+<th align="right">conf.low</th>
+<th align="right">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">1.266</td>
+<td align="right">0.515</td>
+<td align="right">2.458</td>
+<td align="right">0.014</td>
+<td align="right">0.254</td>
+<td align="right">2.278</td>
+</tr>
+<tr class="even">
+<td align="left">retail_avg</td>
+<td align="right">-0.073</td>
+<td align="right">0.013</td>
+<td align="right">-5.680</td>
+<td align="right">0.000</td>
+<td align="right">-0.099</td>
+<td align="right">-0.048</td>
+</tr>
+<tr class="odd">
+<td align="left">grocery_avg</td>
+<td align="right">-0.015</td>
+<td align="right">0.014</td>
+<td align="right">-1.068</td>
+<td align="right">0.286</td>
+<td align="right">-0.044</td>
+<td align="right">0.013</td>
+</tr>
+<tr class="even">
+<td align="left">workplaces_avg</td>
+<td align="right">-0.035</td>
+<td align="right">0.023</td>
+<td align="right">-1.537</td>
+<td align="right">0.125</td>
+<td align="right">-0.080</td>
+<td align="right">0.010</td>
+</tr>
+<tr class="odd">
+<td align="left">retail_avg:grocery_avg</td>
+<td align="right">0.002</td>
+<td align="right">0.000</td>
+<td align="right">3.770</td>
+<td align="right">0.000</td>
+<td align="right">0.001</td>
+<td align="right">0.002</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="questions" class="section level2">
 <h2>Questions</h2>
