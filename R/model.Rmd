@@ -18,7 +18,7 @@ library(broom)
 library(knitr)
 library(data.table)
 library(patchwork)
-library(hrbrthemes)
+#library(hrbrthemes)
 library(skimr)
 library(readr)
 library(rms)
@@ -382,21 +382,7 @@ tidy(full_model) %>%
   kable(digits = 3)
 ``` 
 
-The p-values for `retail_avg`, `grocery_avg`, `workplaces_avg`, and `retail_avg:grocery_avg` are all less than a significance level of $\alpha = 0.05$ and have 95% confidence intervals that do not include 0. Therefore, we can conclude that they are significant predictors when predicting the median property value of owner-occupied homes in thousands of dollars for towns located in the suburbs of Boston. In addition, the interaction term between the mean-centered proportion of non-retail business acres per town and the tract house bounds river is also significant based on the p-value and confidence interval.
-
 The intercept is 28.454. This means that the expected median property value of owner-occupied homes for towns located in the suburbs of Boston with `r round(mean(real_estate$CRIM))` crime rate per capita, no residential land zoned for lots over 25,000 sq.ft, `r round(mean(real_estate$INDUS))`, does not bound river, with `r round(mean(real_estate$RM))` number of rooms per dwelling on average, no owner-occupied units built prior to 1940, `r round(mean(real_estate$DIS))` as weighted distance to five Boston employment centers, and pupil-teacher ratio of `r round(mean(real_estate$PTRATIO))` is around 28454 dollars.
-
-The estimated coefficient for `indus_cent` is -0.358. This means that for every one percentage point increase in the proportion of non-retail business acres per town, the mean of the median property value of owner-occupied homes for each town is expected to decrease by 358 dollars, holding all other predictor variables constant.
-
-The estimated coefficient for `CHAS1` is 7.485. This means that if a town bounds the Charles River, then the median property value of owner-occupied homes in thousands of dollars for each town is expected to be 7485 dollars higher than the town that does not bound the Charles River, holding all other predictor variables constant.
-
-The estimated coefficient for `rm_cent` is 5.788. This means that for every additional room in the average number of rooms per dwelling, the mean of the median property value of owner-occupied homes for each town is expected to increase by 5788 dollars, holding all other predictor variables constant.
-
-The estimated coefficient for `AGE` is -0.097. This means that for every one percentage point increase in the proportion of owner-occupied units built prior to 1940, the mean of the median property value of owner-occupied homes for each town is expected to decrease by 97 dollars, holding all other predictor variables constant.
-
-The estimated coefficient for `dis_cent` is -1.778. This means that for every one additional mile in the weighted distances to five Boston employment centers, the mean of the median property value of owner-occupied homes for each town is expected to decrease by 1778 dollars, holding all other predictor variables constant.
-
-The estimated coefficient for `ptratio_cent` is -0.599. This means that for every one percentage point increase in pupil-teacher ratio, the mean of the median property value of owner-occupied homes for each town is expected to decrease by 599 dollars, holding all other predictor variables constant.
 
 The estimated coefficient for `indus_cent:CHAS1` is 0.936. This means that for every one percentage point increase in the proportion of non-retail business acres per town, the median property value of owner-occupied homes for each town is expected to increase by 936 dollars, on average, for towns the bound the Charles River than towns that do not bound the Charles River, holding all other predictor variables constant.
 
