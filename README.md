@@ -1,8 +1,6 @@
-# Datathon2020
+# Datathon2020: _‘I like to move it, move it’_: The Effects of post-COVID Mobility on Unemployment
 
-### Team Baesian Statistics: Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu 
-
-### Title: _‘I like to move it, move it’_: The Effects of post-COVID Mobility on Unemployment
+### Team Baesian Statistics: Albert Sun, Ben Wallace, Larry Zheng, and Lily Zhu
 
 ## Background
 
