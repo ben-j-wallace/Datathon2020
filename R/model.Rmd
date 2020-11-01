@@ -401,3 +401,17 @@ The estimated coefficient for `ptratio_cent` is -0.599. This means that for ever
 The estimated coefficient for `indus_cent:CHAS1` is 0.936. This means that for every one percentage point increase in the proportion of non-retail business acres per town, the median property value of owner-occupied homes for each town is expected to increase by 936 dollars, on average, for towns the bound the Charles River than towns that do not bound the Charles River, holding all other predictor variables constant.
 
 Based on our current output, we can see that both geographical and societal factors influence the property values in Boston suburbs. In particular, factors that indicate better environment and number of rooms in a house have a positive linear relationship with the property values in Boston suburbs. On the other hand, proportion of non-retail business, proportion of old buildings, distances to employment centers, and pupil-teacher ratio have negative linear relationships with the property values in Boston suburbs. This is roughly in line with what we expected since characteristics that indicate limited access to resources (e.g., high student-to-teacher ratio andd low average number of rooms per home) tend to have have lower median property values of owner-occupied homes.
+
+## Prediction
+
+```{r}
+broom::augment(x=final_model, newdata = merged_data, type.predict = "response") %>%
+  arrange(-.fitted) 
+
+broom::augment(x=final_model, newdata = merged_data, type.predict = "response") %>%
+  arrange(.fitted) 
+```
+
+Our model predicts these counties to have the top unemployment rate increases: New York County (+8.7%), Arlington County (+6.9%), Santa Clara County (+6.8%), Kauai County (+6.5%), Maui County (+6.5%).
+
+Our model predicts these counties to have the smallest unemployment rate decreases: Cape May County (-3.3%), Dare County (-3.1%), Door County (-2.5%), Le Sueur County (-0.9%), Taney County (-0.9%).
